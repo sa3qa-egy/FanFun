@@ -18,11 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_png" translatesAutoresizingMaskIntoConstraints="NO" id="MN8-Bh-eQw">
-                                <rect key="frame" x="26" y="59" width="341" height="374"/>
-                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MsH-i3-bSb">
-                                <rect key="frame" x="0.0" y="433" width="393" height="336"/>
+                                <rect key="frame" x="0.0" y="278" width="393" height="491"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dM9-uM-R0p">
                                     <size key="itemSize" width="190" height="162"/>
@@ -45,7 +42,7 @@
                                                             <rect key="frame" x="36" y="-40" width="118" height="121.66666666666667"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FootBall" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tla-r9-DKy">
-                                                            <rect key="frame" x="61.666666666666664" y="93.666666666666657" width="66.666666666666686" height="20.333333333333329"/>
+                                                            <rect key="frame" x="61.666666666666664" y="78" width="66.666666666666686" height="20.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -54,7 +51,7 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstItem="Tla-r9-DKy" firstAttribute="centerX" secondItem="EtZ-TX-R2d" secondAttribute="centerX" id="Osr-jF-vHa"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Tla-r9-DKy" secondAttribute="bottom" constant="8" id="nhU-Gl-G2P"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Tla-r9-DKy" secondAttribute="bottom" constant="23.666666666666671" id="nhU-Gl-G2P"/>
                                                         <constraint firstItem="auC-NK-MWm" firstAttribute="leading" secondItem="EtZ-TX-R2d" secondAttribute="leading" constant="36" id="rwl-MH-4pe"/>
                                                     </constraints>
                                                 </view>
@@ -78,16 +75,22 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_png" translatesAutoresizingMaskIntoConstraints="NO" id="MN8-Bh-eQw">
+                                <rect key="frame" x="26" y="59" width="341" height="219"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="219" id="FNi-rV-kve"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="ff_background"/>
                         <constraints>
+                            <constraint firstItem="MsH-i3-bSb" firstAttribute="top" secondItem="MN8-Bh-eQw" secondAttribute="bottom" id="VaY-Si-iYS"/>
                             <constraint firstItem="MsH-i3-bSb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cGH-rK-zNH"/>
+                            <constraint firstItem="MN8-Bh-eQw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="chy-u2-mDm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MsH-i3-bSb" secondAttribute="bottom" id="dqO-E2-8cH"/>
-                            <constraint firstItem="MN8-Bh-eQw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ggQ-BN-6Qx"/>
-                            <constraint firstItem="MsH-i3-bSb" firstAttribute="top" secondItem="MN8-Bh-eQw" secondAttribute="bottom" id="iQT-xj-S1J"/>
+                            <constraint firstItem="MN8-Bh-eQw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mY6-Zd-wbY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MsH-i3-bSb" secondAttribute="trailing" id="tph-Cc-4RR"/>
-                            <constraint firstItem="MN8-Bh-eQw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uHi-Rc-Unx"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="yQV-I0-uxq"/>
