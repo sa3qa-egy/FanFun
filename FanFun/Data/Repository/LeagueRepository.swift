@@ -1,7 +1,7 @@
 import Foundation
 
 protocol LeagueRepositoryProtocol {
-    func getLeagues(completion: @escaping (Result<[League], Error>) -> Void)
+    func getLeagues(for sport: String, completion: @escaping (Result<[League], Error>) -> Void)
 }
 
 class LeagueRepository: LeagueRepositoryProtocol {
@@ -11,9 +11,7 @@ class LeagueRepository: LeagueRepositoryProtocol {
         self.networkService = networkService
     }
     
-    func getLeagues(completion: @escaping (Result<[League], Error>) -> Void) {
-        networkService.fetchLeagues { result in
-            completion(result)
-        }
+    func getLeagues(for sport: String, completion: @escaping (Result<[League], Error>) -> Void) {
+        networkService.fetchLeagues(for: sport, completion: completion)
     }
 }
