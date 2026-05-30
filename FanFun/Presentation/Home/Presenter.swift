@@ -24,10 +24,16 @@ class HomePresenter: HomePresenterProtocol {
         sports = [
             Sport(name: "Football", image: UIImage(named: "football") ?? UIImage(systemName: "sportscourt")),
             Sport(name: "Tennis", image: UIImage(named: "tennis") ?? UIImage(systemName: "sportscourt")),
-            Sport(name: "Cricket", image: UIImage(named: "cricket") ?? UIImage(systemName: "sportscourt")),
+            Sport(name: "cricket", image: UIImage(named: "cricket") ?? UIImage(systemName: "sportscourt")),
             Sport(name: "Basketball", image: UIImage(named: "basketball") ?? UIImage(systemName: "sportscourt"))
         ]
     }
+    
+    func didSelectSport(at index: Int) {
+            let selectedSport = getSport(at: index)
+                        
+            view?.navigateToLeagueScreen(with: selectedSport.name)
+        }
     
     var numberOfSports: Int {
         return sports.count
