@@ -14,12 +14,26 @@ class HomeViewController: UIViewController {
         
         override func viewDidLoad() {
             super.viewDidLoad()
+            title = "Home"
             
             presenter = HomePresenter(view: self)
             
             setupCollectionView()
+            setupNavigationBar()
             presenter.viewDidLoad()
         }
+    private func setupNavigationBar() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .systemBackground 
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.label]
+        
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        
+        navigationController?.navigationBar.tintColor = .systemBlue
+    }
         
         private func setupCollectionView() {
             sportCollectionView.dataSource = self
@@ -40,31 +54,48 @@ class HomeViewController: UIViewController {
                 self.sportCollectionView.reloadData()
             }
         }
+        
+        func navigateToLeagueScreen(with sportType: String) {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                guard let leagueVC = storyboard.instantiateViewController(withIdentifier: "LeagueViewController") as? LeagueViewController else {
+                    fatalError("LeagueViewController not found in Storyboard")
+                }
+                
+                let leaguePresenter = LeaguePresenter(view: leagueVC, sportType: sportType)
+                leagueVC.presenter = leaguePresenter
+                leagueVC.hidesBottomBarWhenPushed = true
+                
+                self.navigationController?.pushViewController(leagueVC, animated: true)
+            }
     }
 
-    extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-        
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return presenter.numberOfSports
-        }
-        
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SportCollectionViewCell", for: indexPath) as? SportCellCollectionViewCell else {
-                fatalError("Could not dequeue SportCollectionViewCell.")
-            }
-            
-            let sport = presenter.getSport(at: indexPath.row)
-            cell.configure(with: sport)
-            
-            return cell
-        }
-        
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let totalHorizontalPadding: CGFloat = 8 + 8 + 8
-            let availableWidth = collectionView.bounds.width - totalHorizontalPadding
-            let cellWidth = availableWidth / 2
-            let cellHeight = cellWidth * 1.2
-            
-            return CGSize(width: cellWidth, height: cellHeight)
-        }
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return presenter.numberOfSports
     }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SportCollectionViewCell", for: indexPath) as? SportCellCollectionViewCell else {
+            fatalError("Could not dequeue SportCollectionViewCell.")
+        }
+        
+        let sport = presenter.getSport(at: indexPath.row)
+        cell.configure(with: sport)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let totalHorizontalPadding: CGFloat = 8 + 8 + 8
+        let availableWidth = collectionView.bounds.width - totalHorizontalPadding
+        let cellWidth = availableWidth / 2
+        let cellHeight = cellWidth * 1.2
+        
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.didSelectSport(at: indexPath.row)
+    }
+}
