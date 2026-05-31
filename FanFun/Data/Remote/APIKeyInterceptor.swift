@@ -1,7 +1,7 @@
 import Foundation
 import Alamofire
 
-class APIKeyInterceptor: RequestInterceptor {
+class APIKeyInterceptor: RequestInterceptor, @unchecked Sendable {
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         var request = urlRequest
         

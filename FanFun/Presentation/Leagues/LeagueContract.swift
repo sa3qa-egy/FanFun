@@ -1,15 +1,10 @@
-//
-//  LeagueContract.swift
-//  FanFun
-//
-//  Created by yassen on 30/05/2026.
-//
-
 protocol LeagueViewProtocol: AnyObject {
     func showLoading()
     func hideLoading()
     func reloadTableView()
     func showError(message: String)
+    func showOfflineNotice()
+    func hideOfflineNotice()
 }
 
 protocol LeaguePresenterProtocol {

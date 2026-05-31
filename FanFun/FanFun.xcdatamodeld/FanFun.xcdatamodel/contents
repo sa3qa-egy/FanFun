@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23605" systemVersion="23J423" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="LeagueEntity" representedClassName="LeagueEntity" syncable="YES" codeGenerationType="none">
+        <attribute name="leagueKey" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
+        <attribute name="leagueName" optional="YES" attributeType="String"/>
+        <attribute name="countryKey" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
+        <attribute name="countryName" optional="YES" attributeType="String"/>
+        <attribute name="leagueLogo" optional="YES" attributeType="String"/>
+        <attribute name="countryLogo" optional="YES" attributeType="String"/>
+        <attribute name="leagueYear" optional="YES" attributeType="String"/>
+        <attribute name="sportType" optional="YES" attributeType="String"/>
+    </entity>
 </model>
