@@ -8,11 +8,12 @@ import UIKit
 
 class HomePresenter: HomePresenterProtocol {
     
-    private weak var view: HomeViewProtocol?
+    weak var view: HomeViewProtocol?
+    private let router: AppRouterProtocol
     private var sports: [Sport] = []
     
-    init(view: HomeViewProtocol) {
-        self.view = view
+    init(router: AppRouterProtocol = AppRouter.shared) {
+        self.router = router
     }
     
     func viewDidLoad() {
@@ -30,10 +31,9 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func didSelectSport(at index: Int) {
-            let selectedSport = getSport(at: index)
-                        
-            view?.navigateToLeagueScreen(with: selectedSport.name)
-        }
+        let selectedSport = getSport(at: index)
+        router.navigateToLeagueScreen(from: view as? UIViewController, sportType: selectedSport.name)
+    }
     
     var numberOfSports: Int {
         return sports.count

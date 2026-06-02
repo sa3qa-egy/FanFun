@@ -5,8 +5,18 @@ class LeagueViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var presenter: LeaguePresenterProtocol!
-    var sportType: String!
+    private let presenter: LeaguePresenterProtocol
+    private let sportType: String
+    
+    init?(coder: NSCoder, presenter: LeaguePresenterProtocol, sportType: String) {
+        self.presenter = presenter
+        self.sportType = sportType
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("Use init(coder:presenter:sportType:) to instantiate LeagueViewController")
+    }
     
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     
@@ -118,17 +128,6 @@ extension LeagueViewController: LeagueViewProtocol {
                 self.offlineBannerView.isHidden = true
             })
         }
-    }
-    
-    func navigateToLeagueDetails(sportType: String, leagueId: Int, leagueName: String) {
-        let leagueDetailsVC = AppDIContainer.shared.makeLeagueDetailsViewController(
-            sportType: sportType,
-            leagueId: leagueId,
-            leagueName: leagueName
-        )
-        leagueDetailsVC.hidesBottomBarWhenPushed = true
-        
-        self.navigationController?.pushViewController(leagueDetailsVC, animated: true)
     }
 }
 

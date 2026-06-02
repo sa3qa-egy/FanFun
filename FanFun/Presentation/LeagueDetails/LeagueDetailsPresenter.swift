@@ -7,7 +7,7 @@ import Foundation
 
 class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     
-    private weak var view: LeagueDetailsViewProtocol?
+    weak var view: LeagueDetailsViewProtocol?
     private let repository: SportsRepositoryProtocol
     private var sportType: String = ""
     private var leagueId: Int = 0
@@ -19,10 +19,8 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     private let dispatchGroup = DispatchGroup()
     
     init(
-        view: LeagueDetailsViewProtocol,
         repository: SportsRepositoryProtocol = SportsRepositoryImpl()
     ) {
-        self.view = view
         self.repository = repository
     }
     

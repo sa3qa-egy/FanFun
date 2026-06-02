@@ -9,7 +9,6 @@ import Foundation
 
 protocol HomeViewProtocol: AnyObject {
     func reloadCollectionView()
-    func navigateToLeagueScreen(with sportType: String)
 }
 
 protocol HomePresenterProtocol {

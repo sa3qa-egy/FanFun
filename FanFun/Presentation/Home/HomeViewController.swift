@@ -16,8 +16,11 @@ class HomeViewController: UIViewController {
             super.viewDidLoad()
             title = "Home"
             
-            AppDIContainer.shared.injectHomeDependencies(view: self)
-
+            if presenter == nil {
+                let defaultPresenter = HomePresenter()
+                defaultPresenter.view = self
+                self.presenter = defaultPresenter
+            }
             
             setupCollectionView()
             setupNavigationBar()
@@ -54,13 +57,6 @@ class HomeViewController: UIViewController {
             DispatchQueue.main.async {
                 self.sportCollectionView.reloadData()
             }
-        }
-        
-        func navigateToLeagueScreen(with sportType: String) {
-            let leagueVC = AppDIContainer.shared.makeLeagueViewController(sportType: sportType)
-            leagueVC.hidesBottomBarWhenPushed = true
-            
-            self.navigationController?.pushViewController(leagueVC, animated: true)
         }
     }
 

@@ -5,7 +5,6 @@ protocol LeagueViewProtocol: AnyObject {
     func showError(message: String)
     func showOfflineNotice()
     func hideOfflineNotice()
-    func navigateToLeagueDetails(sportType: String, leagueId: Int, leagueName: String)
 }
 
 protocol LeaguePresenterProtocol {
