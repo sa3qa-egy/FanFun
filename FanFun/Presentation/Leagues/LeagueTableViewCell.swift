@@ -78,12 +78,15 @@ class LeagueTableViewCell: UITableViewCell {
             leagueImageView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 12),
             leagueImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -12),
             leagueImageView.widthAnchor.constraint(equalToConstant: 50),
-            leagueImageView.heightAnchor.constraint(equalToConstant: 50),
             
             nameLabel.leadingAnchor.constraint(equalTo: leagueImageView.trailingAnchor, constant: 16),
             nameLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
             nameLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor)
         ])
+        
+        let heightConstraint = leagueImageView.heightAnchor.constraint(equalToConstant: 50)
+        heightConstraint.priority = .init(999)
+        heightConstraint.isActive = true
     }
         
     func configure(with league: League) {

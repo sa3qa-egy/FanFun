@@ -3,7 +3,7 @@ import Foundation
 class LeaguePresenter: LeaguePresenterProtocol {
     private weak var view: LeagueViewProtocol?
     private let repository: LeagueRepositoryProtocol
-    private let sportType: String
+    let sportType: String
     private let networkMonitor: NetworkMonitor
     
     private var allLeagues: [League] = []
@@ -40,6 +40,11 @@ class LeaguePresenter: LeaguePresenterProtocol {
             filteredLeagues = allLeagues.filter { $0.leagueName.localizedCaseInsensitiveContains(query) }
         }
         view?.reloadTableView()
+    }
+    
+    func didSelectLeague(at index: Int) {
+        let league = filteredLeagues[index]
+        view?.navigateToLeagueDetails(sportType: sportType, leagueId: league.leagueKey, leagueName: league.leagueName)
     }
     
     private func fetchLeagues() {

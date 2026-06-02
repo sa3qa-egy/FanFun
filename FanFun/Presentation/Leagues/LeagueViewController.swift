@@ -118,6 +118,22 @@ extension LeagueViewController: LeagueViewProtocol {
             })
         }
     }
+    
+    func navigateToLeagueDetails(sportType: String, leagueId: Int, leagueName: String) {
+        guard let leagueDetailsVC = storyboard?.instantiateViewController(withIdentifier: "LeagueDetailsViewController") as? LeagueDetailsViewController else {
+            return
+        }
+        let leagueDetailsPresenter = LeagueDetailsPresenter(
+            view: leagueDetailsVC,
+            sportType: sportType,
+            leagueId: leagueId
+        )
+        leagueDetailsVC.presenter = leagueDetailsPresenter
+        leagueDetailsVC.leagueName = leagueName
+        leagueDetailsVC.hidesBottomBarWhenPushed = true
+        
+        self.navigationController?.pushViewController(leagueDetailsVC, animated: true)
+    }
 }
 
 extension LeagueViewController: UITableViewDataSource, UITableViewDelegate {
@@ -137,6 +153,7 @@ extension LeagueViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        presenter.didSelectLeague(at: indexPath.row)
     }
 }
 
