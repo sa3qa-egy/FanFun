@@ -18,7 +18,7 @@ protocol LeagueDetailsPresenterProtocol {
     var numberOfUpcomingMatches: Int { get }
     var numberOfPreviousMatches: Int { get }
     var numberOfTeams: Int { get }
-    func viewDidLoad()
+    func viewDidLoad(sportType: String, leagueId: Int)
     func getUpcomingMatch(at index: Int) -> Fixture
     func getPreviousMatch(at index: Int) -> Fixture
     func getTeam(at index: Int) -> Team

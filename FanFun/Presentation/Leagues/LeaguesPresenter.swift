@@ -1,23 +1,23 @@
 import Foundation
+import UIKit
 
 class LeaguePresenter: LeaguePresenterProtocol {
-    private weak var view: LeagueViewProtocol?
-    private let repository: LeagueRepositoryProtocol
-    let sportType: String
+    weak var view: LeagueViewProtocol?
+    private let repository: SportsRepositoryProtocol
+    private let router: AppRouterProtocol
+    private var sportType: String = ""
     private let networkMonitor: NetworkMonitor
     
     private var allLeagues: [League] = []
     private var filteredLeagues: [League] = []
     
     init(
-        view: LeagueViewProtocol,
-        repository: LeagueRepositoryProtocol = LeagueRepository(),
-        sportType: String,
+        repository: SportsRepositoryProtocol = SportsRepositoryImpl(),
+        router: AppRouterProtocol = AppRouter.shared,
         networkMonitor: NetworkMonitor = NetworkMonitor.shared
     ) {
-        self.view = view
         self.repository = repository
-        self.sportType = sportType
+        self.router = router
         self.networkMonitor = networkMonitor
     }
     
@@ -25,7 +25,8 @@ class LeaguePresenter: LeaguePresenterProtocol {
         return filteredLeagues.count
     }
     
-    func viewDidLoad() {
+    func viewDidLoad(sportType: String) {
+        self.sportType = sportType
         fetchLeagues()
     }
     
@@ -44,7 +45,7 @@ class LeaguePresenter: LeaguePresenterProtocol {
     
     func didSelectLeague(at index: Int) {
         let league = filteredLeagues[index]
-        view?.navigateToLeagueDetails(sportType: sportType, leagueId: league.leagueKey, leagueName: league.leagueName)
+        router.navigateToLeagueDetails(from: view as? UIViewController, sportType: sportType, leagueId: league.leagueKey, leagueName: league.leagueName)
     }
     
     private func fetchLeagues() {

@@ -189,3 +189,10 @@ struct Team: Codable {
         teamLogo = try container.decodeIfPresent(String.self, forKey: .teamLogo)
     }
 }
+extension Team {
+    init(teamKey: Int, teamName: String, teamLogo: String?) {
+        self.teamKey = teamKey
+        self.teamName = teamName
+        self.teamLogo = teamLogo
+    }
+}

@@ -7,8 +7,22 @@ import UIKit
 
 class LeagueDetailsViewController: UIViewController {
     
-    var presenter: LeagueDetailsPresenterProtocol!
-    var leagueName: String = ""
+    private let presenter: LeagueDetailsPresenterProtocol
+    private let leagueName: String
+    private let sportType: String
+    private let leagueId: Int
+    
+    init?(coder: NSCoder, presenter: LeagueDetailsPresenterProtocol, leagueName: String, sportType: String, leagueId: Int) {
+        self.presenter = presenter
+        self.leagueName = leagueName
+        self.sportType = sportType
+        self.leagueId = leagueId
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("Use init(coder:presenter:leagueName:sportType:leagueId:) to instantiate LeagueDetailsViewController")
+    }
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var upcomingCollectionView: UICollectionView!
@@ -28,7 +42,7 @@ class LeagueDetailsViewController: UIViewController {
         title = leagueName
         setupNavigationBar()
         setupCollectionViews()
-        presenter.viewDidLoad()
+        presenter.viewDidLoad(sportType: sportType, leagueId: leagueId)
     }
     
     override func viewWillAppear(_ animated: Bool) {

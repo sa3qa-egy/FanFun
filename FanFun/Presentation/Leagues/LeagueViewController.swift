@@ -5,7 +5,18 @@ class LeagueViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var presenter: LeaguePresenterProtocol!
+    private let presenter: LeaguePresenterProtocol
+    private let sportType: String
+    
+    init?(coder: NSCoder, presenter: LeaguePresenterProtocol, sportType: String) {
+        self.presenter = presenter
+        self.sportType = sportType
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("Use init(coder:presenter:sportType:) to instantiate LeagueViewController")
+    }
     
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     
@@ -32,7 +43,7 @@ class LeagueViewController: UIViewController {
         super.viewDidLoad()
         title = "Leagues"
         setupUI()
-        presenter.viewDidLoad()
+        presenter.viewDidLoad(sportType: sportType)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -117,22 +128,6 @@ extension LeagueViewController: LeagueViewProtocol {
                 self.offlineBannerView.isHidden = true
             })
         }
-    }
-    
-    func navigateToLeagueDetails(sportType: String, leagueId: Int, leagueName: String) {
-        guard let leagueDetailsVC = storyboard?.instantiateViewController(withIdentifier: "LeagueDetailsViewController") as? LeagueDetailsViewController else {
-            return
-        }
-        let leagueDetailsPresenter = LeagueDetailsPresenter(
-            view: leagueDetailsVC,
-            sportType: sportType,
-            leagueId: leagueId
-        )
-        leagueDetailsVC.presenter = leagueDetailsPresenter
-        leagueDetailsVC.leagueName = leagueName
-        leagueDetailsVC.hidesBottomBarWhenPushed = true
-        
-        self.navigationController?.pushViewController(leagueDetailsVC, animated: true)
     }
 }
 

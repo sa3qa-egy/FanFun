@@ -1,33 +1,28 @@
 import Foundation
-import Alamofire
 
 protocol NetworkServiceProtocol {
     func fetchLeagues(for sport: String, completion: @escaping (Result<[League], Error>) -> Void)
     func fetchFixtures(for sport: String, leagueId: Int, from: String, to: String, completion: @escaping (Result<[Fixture], Error>) -> Void)
     func fetchTeams(for sport: String, leagueId: Int, completion: @escaping (Result<[Team], Error>) -> Void)
+    func fetchPlayers(for sport: String, leagueId: Int, completion: @escaping (Result<[Player], Error>) -> Void)
 }
 
 class NetworkService: NetworkServiceProtocol {
     private let baseDomain = "https://apiv2.allsportsapi.com/"
+    private let networkClient: NetworkClientProtocol
     
-    private let session: Session = {
-        let interceptor = APIKeyInterceptor()
-        
-        let configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForRequest  = 30
-        configuration.timeoutIntervalForResource = 30
-        
-        return Session(configuration: configuration, interceptor: interceptor)
-    }()
+    init(networkClient: NetworkClientProtocol = NetworkClient()) {
+        self.networkClient = networkClient
+    }
     
     func fetchLeagues(for sport: String, completion: @escaping (Result<[League], Error>) -> Void) {
         let url = baseDomain + sport.lowercased()
         let parameters: [String: Any] = ["met": "Leagues"]
         
-        session.request(url, parameters: parameters).responseDecodable(of: LeagueResponse.self) { response in
-            switch response.result {
-            case .success(let leagueResponse):
-                completion(.success(leagueResponse.result))
+        networkClient.request(url: url, parameters: parameters) { (result: Result<LeagueResponse, Error>) in
+            switch result {
+            case .success(let response):
+                completion(.success(response.result))
             case .failure(let error):
                 completion(.failure(error))
             }
@@ -43,16 +38,13 @@ class NetworkService: NetworkServiceProtocol {
             "to": to
         ]
         
-        session.request(url, parameters: parameters).responseDecodable(of: FixtureResponse.self) { response in
-            switch response.result {
-            case .success(let fixtureResponse):
-                print("✅ Fixtures fetched: \(fixtureResponse.result.count) events for leagueId=\(leagueId)")
-                completion(.success(fixtureResponse.result))
+        networkClient.request(url: url, parameters: parameters) { (result: Result<FixtureResponse, Error>) in
+            switch result {
+            case .success(let response):
+                print("✅ Fixtures fetched: \(response.result.count) events for leagueId=\(leagueId)")
+                completion(.success(response.result))
             case .failure(let error):
                 print("❌ Fixtures fetch failed for leagueId=\(leagueId): \(error)")
-                if let data = response.data, let raw = String(data: data.prefix(500), encoding: .utf8) {
-                    print("📋 Raw response (first 500 chars): \(raw)")
-                }
                 completion(.failure(error))
             }
         }
@@ -65,16 +57,32 @@ class NetworkService: NetworkServiceProtocol {
             "leagueId": leagueId
         ]
         
-        session.request(url, parameters: parameters).responseDecodable(of: TeamResponse.self) { response in
-            switch response.result {
-            case .success(let teamResponse):
-                print("✅ Teams fetched: \(teamResponse.result.count) teams for leagueId=\(leagueId)")
-                completion(.success(teamResponse.result))
+        networkClient.request(url: url, parameters: parameters) { (result: Result<TeamResponse, Error>) in
+            switch result {
+            case .success(let response):
+                print("✅ Teams fetched: \(response.result.count) teams for leagueId=\(leagueId)")
+                completion(.success(response.result))
             case .failure(let error):
                 print("❌ Teams fetch failed for leagueId=\(leagueId): \(error)")
-                if let data = response.data, let raw = String(data: data.prefix(500), encoding: .utf8) {
-                    print("📋 Raw response (first 500 chars): \(raw)")
-                }
+                completion(.failure(error))
+            }
+        }
+        
+    }
+    func fetchPlayers(for sport: String, leagueId: Int, completion: @escaping (Result<[Player], Error>) -> Void) {
+        let url = baseDomain + sport.lowercased()
+        let parameters: [String: Any] = [
+            "met": "Players",
+            "leagueId": leagueId
+        ]
+        
+        networkClient.request(url: url, parameters: parameters) { (result: Result<PlayerResponse, Error>) in
+            switch result {
+            case .success(let response):
+                print("✅ Players fetched: \(response.result?.count ?? 0) players for leagueId=\(leagueId)")
+                completion(.success(response.result ?? []))
+            case .failure(let error):
+                print("❌ Players fetch failed for leagueId=\(leagueId): \(error)")
                 completion(.failure(error))
             }
         }
