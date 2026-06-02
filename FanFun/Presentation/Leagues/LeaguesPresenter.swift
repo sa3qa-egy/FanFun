@@ -2,7 +2,7 @@ import Foundation
 
 class LeaguePresenter: LeaguePresenterProtocol {
     private weak var view: LeagueViewProtocol?
-    private let repository: LeagueRepositoryProtocol
+    private let repository: SportsRepositoryProtocol
     let sportType: String
     private let networkMonitor: NetworkMonitor
     
@@ -11,7 +11,7 @@ class LeaguePresenter: LeaguePresenterProtocol {
     
     init(
         view: LeagueViewProtocol,
-        repository: LeagueRepositoryProtocol = LeagueRepository(),
+        repository: SportsRepositoryProtocol = SportsRepositoryImpl(),
         sportType: String,
         networkMonitor: NetworkMonitor = NetworkMonitor.shared
     ) {

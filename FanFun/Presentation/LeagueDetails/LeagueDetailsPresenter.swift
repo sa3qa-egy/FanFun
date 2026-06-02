@@ -8,7 +8,7 @@ import Foundation
 class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     
     private weak var view: LeagueDetailsViewProtocol?
-    private let repository: LeagueDetailsRepositoryProtocol
+    private let repository: SportsRepositoryProtocol
     private let sportType: String
     private let leagueId: Int
     
@@ -20,7 +20,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     
     init(
         view: LeagueDetailsViewProtocol,
-        repository: LeagueDetailsRepositoryProtocol = LeagueDetailsRepository(),
+        repository: SportsRepositoryProtocol = SportsRepositoryImpl(),
         sportType: String,
         leagueId: Int
     ) {
