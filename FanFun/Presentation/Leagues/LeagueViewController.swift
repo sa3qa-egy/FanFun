@@ -120,16 +120,11 @@ extension LeagueViewController: LeagueViewProtocol {
     }
     
     func navigateToLeagueDetails(sportType: String, leagueId: Int, leagueName: String) {
-        guard let leagueDetailsVC = storyboard?.instantiateViewController(withIdentifier: "LeagueDetailsViewController") as? LeagueDetailsViewController else {
-            return
-        }
-        let leagueDetailsPresenter = LeagueDetailsPresenter(
-            view: leagueDetailsVC,
+        let leagueDetailsVC = AppDIContainer.shared.makeLeagueDetailsViewController(
             sportType: sportType,
-            leagueId: leagueId
+            leagueId: leagueId,
+            leagueName: leagueName
         )
-        leagueDetailsVC.presenter = leagueDetailsPresenter
-        leagueDetailsVC.leagueName = leagueName
         leagueDetailsVC.hidesBottomBarWhenPushed = true
         
         self.navigationController?.pushViewController(leagueDetailsVC, animated: true)

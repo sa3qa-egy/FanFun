@@ -16,7 +16,8 @@ class HomeViewController: UIViewController {
             super.viewDidLoad()
             title = "Home"
             
-            presenter = HomePresenter(view: self)
+            AppDIContainer.shared.injectHomeDependencies(view: self)
+
             
             setupCollectionView()
             setupNavigationBar()
@@ -56,17 +57,11 @@ class HomeViewController: UIViewController {
         }
         
         func navigateToLeagueScreen(with sportType: String) {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                guard let leagueVC = storyboard.instantiateViewController(withIdentifier: "LeagueViewController") as? LeagueViewController else {
-                    fatalError("LeagueViewController not found in Storyboard")
-                }
-                
-                let leaguePresenter = LeaguePresenter(view: leagueVC, sportType: sportType)
-                leagueVC.presenter = leaguePresenter
-                leagueVC.hidesBottomBarWhenPushed = true
-                
-                self.navigationController?.pushViewController(leagueVC, animated: true)
-            }
+            let leagueVC = AppDIContainer.shared.makeLeagueViewController(sportType: sportType)
+            leagueVC.hidesBottomBarWhenPushed = true
+            
+            self.navigationController?.pushViewController(leagueVC, animated: true)
+        }
     }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
