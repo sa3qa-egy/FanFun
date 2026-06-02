@@ -4,6 +4,7 @@ protocol NetworkServiceProtocol {
     func fetchLeagues(for sport: String, completion: @escaping (Result<[League], Error>) -> Void)
     func fetchFixtures(for sport: String, leagueId: Int, from: String, to: String, completion: @escaping (Result<[Fixture], Error>) -> Void)
     func fetchTeams(for sport: String, leagueId: Int, completion: @escaping (Result<[Team], Error>) -> Void)
+    func fetchPlayers(for sport: String, leagueId: Int, completion: @escaping (Result<[Player], Error>) -> Void)
 }
 
 class NetworkService: NetworkServiceProtocol {
@@ -63,6 +64,25 @@ class NetworkService: NetworkServiceProtocol {
                 completion(.success(response.result))
             case .failure(let error):
                 print("❌ Teams fetch failed for leagueId=\(leagueId): \(error)")
+                completion(.failure(error))
+            }
+        }
+        
+    }
+    func fetchPlayers(for sport: String, leagueId: Int, completion: @escaping (Result<[Player], Error>) -> Void) {
+        let url = baseDomain + sport.lowercased()
+        let parameters: [String: Any] = [
+            "met": "Players",
+            "leagueId": leagueId
+        ]
+        
+        networkClient.request(url: url, parameters: parameters) { (result: Result<PlayerResponse, Error>) in
+            switch result {
+            case .success(let response):
+                print("✅ Players fetched: \(response.result?.count ?? 0) players for leagueId=\(leagueId)")
+                completion(.success(response.result ?? []))
+            case .failure(let error):
+                print("❌ Players fetch failed for leagueId=\(leagueId): \(error)")
                 completion(.failure(error))
             }
         }

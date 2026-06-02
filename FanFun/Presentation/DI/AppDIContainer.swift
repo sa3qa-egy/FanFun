@@ -22,10 +22,10 @@ final class AppDIContainer {
         let presenter = LeaguePresenter(
             view: view,
             repository: sportsRepository,
-            sportType: sportType,
             networkMonitor: networkMonitor
         )
         view.presenter = presenter
+        view.sportType = sportType
         return view
     }
     
@@ -36,11 +36,11 @@ final class AppDIContainer {
         }
         let presenter = LeagueDetailsPresenter(
             view: view,
-            repository: sportsRepository,
-            sportType: sportType,
-            leagueId: leagueId
+            repository: sportsRepository
         )
         view.presenter = presenter
+        view.sportType = sportType
+        view.leagueId = leagueId
         view.leagueName = leagueName
         return view
     }

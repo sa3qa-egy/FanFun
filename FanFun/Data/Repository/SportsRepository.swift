@@ -114,6 +114,28 @@ class SportsRepositoryImpl: SportsRepositoryProtocol {
     }
     
     func getTeams(for sport: String, leagueId: Int, completion: @escaping (Result<[Team], Error>) -> Void) {
-        networkService.fetchTeams(for: sport, leagueId: leagueId, completion: completion)
+        if sport.lowercased() == "tennis" {
+            networkService.fetchPlayers(for: sport, leagueId: leagueId) { result in
+                switch result {
+                case .success(let players):
+                    let mappedTeams = players.compactMap { player -> Team? in
+                        let keyString = player.playerKey ?? "0"
+                        let key = Int(keyString) ?? 0
+                        
+                        return Team(
+                            teamKey: key,
+                            teamName: player.playerName ?? "Unknown Player",
+                            teamLogo: player.playerLogo
+                        )
+                    }
+                    completion(.success(mappedTeams))
+                    
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        } else {
+            networkService.fetchTeams(for: sport, leagueId: leagueId, completion: completion)
+        }
     }
 }

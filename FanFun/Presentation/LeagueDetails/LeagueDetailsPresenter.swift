@@ -9,8 +9,8 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     
     private weak var view: LeagueDetailsViewProtocol?
     private let repository: SportsRepositoryProtocol
-    private let sportType: String
-    private let leagueId: Int
+    private var sportType: String = ""
+    private var leagueId: Int = 0
     
     private var upcomingMatches: [Fixture] = []
     private var previousMatches: [Fixture] = []
@@ -20,14 +20,10 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     
     init(
         view: LeagueDetailsViewProtocol,
-        repository: SportsRepositoryProtocol = SportsRepositoryImpl(),
-        sportType: String,
-        leagueId: Int
+        repository: SportsRepositoryProtocol = SportsRepositoryImpl()
     ) {
         self.view = view
         self.repository = repository
-        self.sportType = sportType
-        self.leagueId = leagueId
     }
     
     // MARK: - LeagueDetailsPresenterProtocol
@@ -44,7 +40,9 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
         return teams.count
     }
     
-    func viewDidLoad() {
+    func viewDidLoad(sportType: String, leagueId: Int) {
+        self.sportType = sportType
+        self.leagueId = leagueId
         view?.showLoading()
         fetchAllData()
     }

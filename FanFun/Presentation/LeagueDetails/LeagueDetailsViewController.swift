@@ -9,6 +9,8 @@ class LeagueDetailsViewController: UIViewController {
     
     var presenter: LeagueDetailsPresenterProtocol!
     var leagueName: String = ""
+    var sportType: String!
+    var leagueId: Int!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var upcomingCollectionView: UICollectionView!
@@ -28,7 +30,7 @@ class LeagueDetailsViewController: UIViewController {
         title = leagueName
         setupNavigationBar()
         setupCollectionViews()
-        presenter.viewDidLoad()
+        presenter.viewDidLoad(sportType: sportType, leagueId: leagueId)
     }
     
     override func viewWillAppear(_ animated: Bool) {

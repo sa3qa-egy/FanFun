@@ -3,7 +3,7 @@ import Foundation
 class LeaguePresenter: LeaguePresenterProtocol {
     private weak var view: LeagueViewProtocol?
     private let repository: SportsRepositoryProtocol
-    let sportType: String
+    private var sportType: String = ""
     private let networkMonitor: NetworkMonitor
     
     private var allLeagues: [League] = []
@@ -12,12 +12,10 @@ class LeaguePresenter: LeaguePresenterProtocol {
     init(
         view: LeagueViewProtocol,
         repository: SportsRepositoryProtocol = SportsRepositoryImpl(),
-        sportType: String,
         networkMonitor: NetworkMonitor = NetworkMonitor.shared
     ) {
         self.view = view
         self.repository = repository
-        self.sportType = sportType
         self.networkMonitor = networkMonitor
     }
     
@@ -25,7 +23,8 @@ class LeaguePresenter: LeaguePresenterProtocol {
         return filteredLeagues.count
     }
     
-    func viewDidLoad() {
+    func viewDidLoad(sportType: String) {
+        self.sportType = sportType
         fetchLeagues()
     }
     

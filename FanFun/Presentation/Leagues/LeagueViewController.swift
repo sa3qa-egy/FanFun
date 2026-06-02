@@ -6,6 +6,7 @@ class LeagueViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var presenter: LeaguePresenterProtocol!
+    var sportType: String!
     
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     
@@ -32,7 +33,7 @@ class LeagueViewController: UIViewController {
         super.viewDidLoad()
         title = "Leagues"
         setupUI()
-        presenter.viewDidLoad()
+        presenter.viewDidLoad(sportType: sportType)
     }
 
     override func viewWillAppear(_ animated: Bool) {
