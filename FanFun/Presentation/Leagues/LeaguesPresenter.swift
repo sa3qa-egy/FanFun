@@ -3,15 +3,22 @@ import Foundation
 class LeaguePresenter: LeaguePresenterProtocol {
     private weak var view: LeagueViewProtocol?
     private let repository: LeagueRepositoryProtocol
-    private let sportType: String
+    let sportType: String
+    private let networkMonitor: NetworkMonitor
     
     private var allLeagues: [League] = []
     private var filteredLeagues: [League] = []
     
-    init(view: LeagueViewProtocol, repository: LeagueRepositoryProtocol = LeagueRepository(), sportType: String) {
+    init(
+        view: LeagueViewProtocol,
+        repository: LeagueRepositoryProtocol = LeagueRepository(),
+        sportType: String,
+        networkMonitor: NetworkMonitor = NetworkMonitor.shared
+    ) {
         self.view = view
         self.repository = repository
         self.sportType = sportType
+        self.networkMonitor = networkMonitor
     }
     
     var numberOfLeagues: Int {
@@ -35,6 +42,11 @@ class LeaguePresenter: LeaguePresenterProtocol {
         view?.reloadTableView()
     }
     
+    func didSelectLeague(at index: Int) {
+        let league = filteredLeagues[index]
+        view?.navigateToLeagueDetails(sportType: sportType, leagueId: league.leagueKey, leagueName: league.leagueName)
+    }
+    
     private func fetchLeagues() {
         view?.showLoading()
         repository.getLeagues(for: sportType) { [weak self] result in
@@ -46,6 +58,13 @@ class LeaguePresenter: LeaguePresenterProtocol {
                 self.allLeagues = leagues
                 self.filteredLeagues = leagues
                 self.view?.reloadTableView()
+                
+                if self.networkMonitor.isConnected {
+                    self.view?.hideOfflineNotice()
+                } else {
+                    self.view?.showOfflineNotice()
+                }
+                
             case .failure(let error):
                 self.view?.showError(message: error.localizedDescription)
             }
