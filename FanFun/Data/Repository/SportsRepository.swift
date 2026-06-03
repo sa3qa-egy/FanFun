@@ -13,6 +13,8 @@ protocol SportsRepositoryProtocol {
     func getUpcomingFixtures(for sport: String, leagueId: Int, completion: @escaping (Result<[Fixture], Error>) -> Void)
     func getPreviousFixtures(for sport: String, leagueId: Int, completion: @escaping (Result<[Fixture], Error>) -> Void)
     func getTeams(for sport: String, leagueId: Int, completion: @escaping (Result<[Team], Error>) -> Void)
+    func getTeamDetails(teamId: Int, completion: @escaping (Result<TeamDetail, Error>) -> Void)
+    func getTennisPlayerDetails(playerId: Int, completion: @escaping (Result<TennisPlayerDetail, Error>) -> Void)
 }
 
 class SportsRepositoryImpl: SportsRepositoryProtocol {
@@ -104,7 +106,6 @@ class SportsRepositoryImpl: SportsRepositoryProtocol {
                     let status = (fixture.eventStatus ?? "").trimmingCharacters(in: .whitespaces)
                     return status == "Finished" || status == "After Pen." || status == "After ET"
                 }
-                // Sort by date descending (most recent first)
                 let sorted = finished.sorted { $0.eventDate > $1.eventDate }
                 completion(.success(sorted))
             case .failure(let error):
@@ -137,5 +138,13 @@ class SportsRepositoryImpl: SportsRepositoryProtocol {
         } else {
             networkService.fetchTeams(for: sport, leagueId: leagueId, completion: completion)
         }
+    }
+
+    func getTeamDetails(teamId: Int, completion: @escaping (Result<TeamDetail, Error>) -> Void) {
+        networkService.fetchTeamDetails(teamId: teamId, completion: completion)
+    }
+
+    func getTennisPlayerDetails(playerId: Int, completion: @escaping (Result<TennisPlayerDetail, Error>) -> Void) {
+        networkService.fetchTennisPlayerDetails(playerId: playerId, completion: completion)
     }
 }
