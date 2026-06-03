@@ -193,4 +193,26 @@ extension LeagueDetailsViewController: UICollectionViewDataSource, UICollectionV
             return CGSize(width: 100, height: 100)
         }
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // Only the teams collection view (tag == 2) is tappable
+        guard collectionView.tag == 2 else { return }
+
+        let team = presenter.getTeam(at: indexPath.item)
+
+        if sportType.lowercased() == "tennis" {
+            // In tennis leagues the "team" cards are actually players
+            AppRouter.shared.navigateToTennisPlayerDetails(
+                from: self,
+                playerId: team.teamKey,
+                playerName: team.teamName
+            )
+        } else {
+            AppRouter.shared.navigateToTeamDetails(
+                from: self,
+                teamId: team.teamKey,
+                teamName: team.teamName
+            )
+        }
+    }
 }

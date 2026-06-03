@@ -450,7 +450,7 @@
         <!--Team Details View Controller-->
         <scene sceneID="G8S-PF-zy5">
             <objects>
-                <viewController id="bd3-tD-4x2" customClass="TeamDetailsViewController" customModule="FanFun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TeamDetailsViewController" id="bd3-tD-4x2" customClass="TeamDetailsViewController" customModule="FanFun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mGG-RA-nOO">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -469,25 +469,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="c37-zx-BAf">
-                                <rect key="frame" x="0.0" y="343" width="393" height="475"/>
+                                <rect key="frame" x="0.0" y="296" width="393" height="522"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eMl-oe-c5q">
-                                <rect key="frame" x="131" y="296" width="131" height="32"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vH5-dQ-CNb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="c37-zx-BAf" firstAttribute="leading" secondItem="vH5-dQ-CNb" secondAttribute="leading" id="07i-Fa-JjK"/>
-                            <constraint firstItem="eMl-oe-c5q" firstAttribute="centerX" secondItem="vH5-dQ-CNb" secondAttribute="centerX" id="0IO-Rz-snd"/>
-                            <constraint firstItem="c37-zx-BAf" firstAttribute="top" secondItem="eMl-oe-c5q" secondAttribute="bottom" constant="16" id="6gu-kc-OOu"/>
+                            <constraint firstItem="c37-zx-BAf" firstAttribute="top" secondItem="QHx-sy-6sR" secondAttribute="bottom" constant="16" id="56m-L7-gbu"/>
                             <constraint firstItem="QHx-sy-6sR" firstAttribute="centerX" secondItem="vH5-dQ-CNb" secondAttribute="centerX" id="Dot-J6-IlU"/>
-                            <constraint firstItem="eMl-oe-c5q" firstAttribute="top" secondItem="QHx-sy-6sR" secondAttribute="bottom" constant="16" id="NY7-9V-w3z"/>
                             <constraint firstItem="QHx-sy-6sR" firstAttribute="top" secondItem="YWM-Hq-vuF" secondAttribute="bottom" constant="20" id="TIs-9y-vbj"/>
                             <constraint firstItem="vH5-dQ-CNb" firstAttribute="bottom" secondItem="c37-zx-BAf" secondAttribute="bottom" id="ULT-fY-4bo"/>
                             <constraint firstItem="vH5-dQ-CNb" firstAttribute="trailing" secondItem="c37-zx-BAf" secondAttribute="trailing" id="ZQ2-vD-wL7"/>
@@ -496,9 +487,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="segmentControl" destination="eMl-oe-c5q" id="NUk-u4-NOq"/>
-                        <outlet property="tabelView" destination="c37-zx-BAf" id="4mf-nN-4l2"/>
+                        <outlet property="imageView" destination="YWM-Hq-vuF" id="ubQ-q0-Whj"/>
+                        <outlet property="tabelView" destination="c37-zx-BAf" id="OMu-gP-BYa"/>
                         <outlet property="teamImage" destination="YWM-Hq-vuF" id="klH-Fb-N71"/>
+                        <outlet property="teamName" destination="QHx-sy-6sR" id="IaD-Cy-ZJ1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9pT-a3-JtN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
