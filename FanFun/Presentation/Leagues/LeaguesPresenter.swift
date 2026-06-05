@@ -45,6 +45,12 @@ class LeaguePresenter: LeaguePresenterProtocol {
 
     func didSelectLeague(at index: Int) {
         let league = filteredLeagues[index]
+        
+        if !networkMonitor.isConnected {
+            view?.showError(message: "No internet connection. Cannot navigate to details.")
+            return
+        }
+        
         router.navigateToLeagueDetails(from: view as? UIViewController, sportType: sportType, leagueId: league.leagueKey, leagueName: league.leagueName)
     }
 

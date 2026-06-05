@@ -338,6 +338,11 @@ extension LeagueDetailsViewController: UICollectionViewDataSource, UICollectionV
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard collectionView.tag == 2 else { return }
 
+        if !NetworkMonitor.shared.isConnected {
+            showError(message: "No internet connection. Cannot navigate to details.")
+            return
+        }
+
         let team = presenter.getTeam(at: indexPath.item)
 
         if sportType.lowercased() == "tennis" {
