@@ -4,22 +4,22 @@ class LeagueViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    
+
     private let presenter: LeaguePresenterProtocol
     private let sportType: String
-    
+
     init?(coder: NSCoder, presenter: LeaguePresenterProtocol, sportType: String) {
         self.presenter = presenter
         self.sportType = sportType
         super.init(coder: coder)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("Use init(coder:presenter:sportType:) to instantiate LeagueViewController")
     }
-    
+
     private let activityIndicator = UIActivityIndicatorView(style: .large)
-    
+
     private let offlineBannerView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.systemOrange.withAlphaComponent(0.92)
@@ -28,7 +28,7 @@ class LeagueViewController: UIViewController {
         view.alpha = 0
         return view
     }()
-    
+
     private let offlineBannerLabel: UILabel = {
         let label = UILabel()
         label.text = "📡  You're offline — showing cached data"
@@ -38,7 +38,7 @@ class LeagueViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Leagues"
@@ -49,14 +49,15 @@ class LeagueViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        tableView.reloadData()
     }
-    
+
     private func setupUI() {
         setupTableView()
         setupActivityIndicator()
         setupOfflineBanner()
     }
-    
+
     private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
@@ -66,23 +67,23 @@ class LeagueViewController: UIViewController {
         tableView.estimatedRowHeight = 90
         tableView.keyboardDismissMode = .onDrag
     }
-    
+
     private func setupActivityIndicator() {
         activityIndicator.center = view.center
         activityIndicator.hidesWhenStopped = true
         view.addSubview(activityIndicator)
     }
-    
+
     private func setupOfflineBanner() {
         offlineBannerView.addSubview(offlineBannerLabel)
         view.addSubview(offlineBannerView)
-        
+
         NSLayoutConstraint.activate([
             offlineBannerView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
             offlineBannerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             offlineBannerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             offlineBannerView.heightAnchor.constraint(equalToConstant: 36),
-            
+
             offlineBannerLabel.centerXAnchor.constraint(equalTo: offlineBannerView.centerXAnchor),
             offlineBannerLabel.centerYAnchor.constraint(equalTo: offlineBannerView.centerYAnchor)
         ])
@@ -90,19 +91,19 @@ class LeagueViewController: UIViewController {
 }
 
 extension LeagueViewController: LeagueViewProtocol {
-    
+
     func showLoading() {
         DispatchQueue.main.async { self.activityIndicator.startAnimating() }
     }
-    
+
     func hideLoading() {
         DispatchQueue.main.async { self.activityIndicator.stopAnimating() }
     }
-    
+
     func reloadTableView() {
         DispatchQueue.main.async { self.tableView.reloadData() }
     }
-    
+
     func showError(message: String) {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
@@ -110,7 +111,7 @@ extension LeagueViewController: LeagueViewProtocol {
             self.present(alert, animated: true)
         }
     }
-    
+
     func showOfflineNotice() {
         DispatchQueue.main.async {
             self.offlineBannerView.isHidden = false
@@ -119,7 +120,7 @@ extension LeagueViewController: LeagueViewProtocol {
             }
         }
     }
-    
+
     func hideOfflineNotice() {
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
@@ -129,23 +130,36 @@ extension LeagueViewController: LeagueViewProtocol {
             })
         }
     }
+
+    func updateFavoriteStatus(at index: Int, isFavorite: Bool) {
+        DispatchQueue.main.async {
+            let indexPath = IndexPath(row: index, section: 0)
+            if let cell = self.tableView.cellForRow(at: indexPath) as? LeagueTableViewCell {
+                cell.configureFavorite(isFavorite: isFavorite)
+            }
+        }
+    }
 }
 
 extension LeagueViewController: UITableViewDataSource, UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.numberOfLeagues
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "LeagueCell", for: indexPath) as? LeagueTableViewCell else {
             fatalError("Could not dequeue LeagueTableViewCell. Check Storyboard identifier.")
         }
         let league = presenter.getLeague(at: indexPath.row)
         cell.configure(with: league)
+        cell.configureFavorite(isFavorite: presenter.isFavorite(at: indexPath.row))
+        cell.onFavoriteTapped = { [weak self] in
+            self?.presenter.toggleFavorite(at: indexPath.row)
+        }
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         presenter.didSelectLeague(at: indexPath.row)
@@ -153,11 +167,11 @@ extension LeagueViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension LeagueViewController: UISearchBarDelegate {
-    
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         presenter.filterLeagues(with: searchText)
     }
-    
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
