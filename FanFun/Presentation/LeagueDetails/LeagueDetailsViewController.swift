@@ -50,10 +50,8 @@ class LeagueDetailsViewController: UIViewController {
         subtitle: "Teams for this league are unavailable"
     )
     
-    /// Dynamic height constraint for the previous matches collection view
     private var previousCollectionHeightConstraint: NSLayoutConstraint?
     
-    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +67,6 @@ class LeagueDetailsViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    // MARK: - Setup
     
     private func setupNavigationBar() {
         let appearance = UINavigationBarAppearance()
@@ -86,9 +83,7 @@ class LeagueDetailsViewController: UIViewController {
         activityIndicator.color = UIColor(named: "ff_primary")
     }
     
-    // MARK: - Empty State Factory
     
-    /// Builds a reusable empty-state card: icon + bold title + muted subtitle.
     private func makeEmptyView(icon: String, title: String, subtitle: String) -> UIView {
         let container = UIView()
         container.backgroundColor = UIColor(named: "ff_surfuce")
@@ -139,9 +134,7 @@ class LeagueDetailsViewController: UIViewController {
         return container
     }
     
-    /// Attaches each empty-state view on top of its matching collection view's superview.
     private func setupEmptyViews() {
-        // Hide the old storyboard labels — we use our own views instead
         upcomingEmptyLabel.isHidden = true
         previousEmptyLabel.isHidden = true
         teamsEmptyLabel.isHidden = true
@@ -163,19 +156,16 @@ class LeagueDetailsViewController: UIViewController {
     }
     
     private func setupCollectionViews() {
-        // Register NIBs for all collection views
         upcomingCollectionView.register(UINib(nibName: "UpcomingMatchCell", bundle: nil), forCellWithReuseIdentifier: UpcomingMatchCell.reuseIdentifier)
         previousCollectionView.register(UINib(nibName: "PreviousMatchCell", bundle: nil), forCellWithReuseIdentifier: PreviousMatchCell.reuseIdentifier)
         teamsCollectionView.register(UINib(nibName: "TeamCell", bundle: nil), forCellWithReuseIdentifier: TeamCell.reuseIdentifier)
         
-        // Set up the dynamic height constraint for previous matches
         for constraint in previousCollectionView.constraints {
             if constraint.firstAttribute == .height {
                 previousCollectionHeightConstraint = constraint
                 break
             }
         }
-        // If no height constraint from storyboard, create one
         if previousCollectionHeightConstraint == nil {
             previousCollectionHeightConstraint = previousCollectionView.heightAnchor.constraint(equalToConstant: 100)
             previousCollectionHeightConstraint?.isActive = true
@@ -184,14 +174,13 @@ class LeagueDetailsViewController: UIViewController {
     
     private func updatePreviousCollectionHeight() {
         let itemCount = presenter.numberOfPreviousMatches
-        let itemHeight: CGFloat = 88 // 80pt cell + 8pt spacing
+        let itemHeight: CGFloat = 88
         let totalHeight = max(CGFloat(itemCount) * itemHeight, 100)
         previousCollectionHeightConstraint?.constant = totalHeight
         view.layoutIfNeeded()
     }
 }
 
-// MARK: - LeagueDetailsViewProtocol
 
 extension LeagueDetailsViewController: LeagueDetailsViewProtocol {
     
@@ -234,7 +223,6 @@ extension LeagueDetailsViewController: LeagueDetailsViewProtocol {
     }
 }
 
-// MARK: - UICollectionView DataSource & DelegateFlowLayout
 
 extension LeagueDetailsViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -293,13 +281,11 @@ extension LeagueDetailsViewController: UICollectionViewDataSource, UICollectionV
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // Only the teams collection view (tag == 2) is tappable
         guard collectionView.tag == 2 else { return }
 
         let team = presenter.getTeam(at: indexPath.item)
 
         if sportType.lowercased() == "tennis" {
-            // In tennis leagues the "team" cards are actually players
             AppRouter.shared.navigateToTennisPlayerDetails(
                 from: self,
                 playerId: team.teamKey,

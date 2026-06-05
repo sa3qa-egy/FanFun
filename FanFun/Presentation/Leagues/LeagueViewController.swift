@@ -67,7 +67,6 @@ class LeagueViewController: UIViewController {
         searchBar.backgroundColor = UIColor(named: "ff_background")
         searchBar.tintColor = UIColor(named: "ff_primary")
         
-        // Style the inner text field
         if let textField = searchBar.value(forKey: "searchField") as? UITextField {
             textField.backgroundColor = UIColor(named: "ff_surfuce")
             textField.textColor = UIColor(named: "ff_primary_text")
