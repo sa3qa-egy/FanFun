@@ -353,6 +353,51 @@
                                                     <constraint firstItem="ldE-dK-f1A" firstAttribute="centerY" secondItem="ldP-bI-e8H" secondAttribute="centerY" id="ld3-wW-xX1"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldU-jQ-l7G">
+                                                <rect key="frame" x="0.0" y="408" width="393" height="174"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldL-kR-m8H">
+                                                        <rect key="frame" x="16" y="0.0" width="361" height="24"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ldP-lS-n9I">
+                                                        <rect key="frame" x="0.0" y="36" width="393" height="138"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="138" id="le6-aA-bB3"/>
+                                                        </constraints>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="12" minimumInteritemSpacing="10" id="ldF-mT-o1J">
+                                                            <size key="itemSize" width="100" height="130"/>
+                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                            <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                                        </collectionViewFlowLayout>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="ldC-vC-e2B" id="le7-cC-dD3"/>
+                                                            <outlet property="delegate" destination="ldC-vC-e2B" id="le8-eE-fF3"/>
+                                                        </connections>
+                                                    </collectionView>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No teams available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldE-nU-p2K">
+                                                        <rect key="frame" x="135.66666666666666" y="96.666666666666629" width="121.66666666666666" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.66000000000000003" green="0.66000000000000003" blue="0.66000000000000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="ldL-kR-m8H" firstAttribute="top" secondItem="ldU-jQ-l7G" secondAttribute="top" id="le9-gG-hH3"/>
+                                                    <constraint firstItem="ldL-kR-m8H" firstAttribute="leading" secondItem="ldU-jQ-l7G" secondAttribute="leading" constant="16" id="lf1-iI-jJ3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ldL-kR-m8H" secondAttribute="trailing" constant="16" id="lf2-kK-lL3"/>
+                                                    <constraint firstItem="ldP-lS-n9I" firstAttribute="top" secondItem="ldL-kR-m8H" secondAttribute="bottom" constant="12" id="lf3-mM-nN3"/>
+                                                    <constraint firstItem="ldP-lS-n9I" firstAttribute="leading" secondItem="ldU-jQ-l7G" secondAttribute="leading" id="lf4-oO-pP3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ldP-lS-n9I" secondAttribute="trailing" id="lf5-qQ-rR3"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ldP-lS-n9I" secondAttribute="bottom" id="lf6-sS-tT3"/>
+                                                    <constraint firstItem="ldE-nU-p2K" firstAttribute="centerX" secondItem="ldP-lS-n9I" secondAttribute="centerX" id="lf7-uU-vV3"/>
+                                                    <constraint firstItem="ldE-nU-p2K" firstAttribute="centerY" secondItem="ldP-lS-n9I" secondAttribute="centerY" id="lf8-wW-xX3"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldU-eL-g2B">
                                                 <rect key="frame" x="0.0" y="248" width="393" height="136"/>
                                                 <subviews>
@@ -399,51 +444,6 @@
                                                     <constraint firstAttribute="bottom" secondItem="ldP-gN-i4D" secondAttribute="bottom" id="le3-qQ-rR2"/>
                                                     <constraint firstItem="ldE-iP-k6F" firstAttribute="centerX" secondItem="ldP-gN-i4D" secondAttribute="centerX" id="le4-sS-tT2"/>
                                                     <constraint firstItem="ldE-iP-k6F" firstAttribute="centerY" secondItem="ldP-gN-i4D" secondAttribute="centerY" id="le5-uU-vV2"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldU-jQ-l7G">
-                                                <rect key="frame" x="0.0" y="408" width="393" height="174"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldL-kR-m8H">
-                                                        <rect key="frame" x="16" y="0.0" width="361" height="24"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ldP-lS-n9I">
-                                                        <rect key="frame" x="0.0" y="36" width="393" height="138"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="138" id="le6-aA-bB3"/>
-                                                        </constraints>
-                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="12" minimumInteritemSpacing="10" id="ldF-mT-o1J">
-                                                            <size key="itemSize" width="100" height="130"/>
-                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                            <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
-                                                        </collectionViewFlowLayout>
-                                                        <connections>
-                                                            <outlet property="dataSource" destination="ldC-vC-e2B" id="le7-cC-dD3"/>
-                                                            <outlet property="delegate" destination="ldC-vC-e2B" id="le8-eE-fF3"/>
-                                                        </connections>
-                                                    </collectionView>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No teams available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldE-nU-p2K">
-                                                        <rect key="frame" x="135.66666666666666" y="96.666666666666629" width="121.66666666666666" height="17"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <color key="textColor" red="0.66000000000000003" green="0.66000000000000003" blue="0.66000000000000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="ldL-kR-m8H" firstAttribute="top" secondItem="ldU-jQ-l7G" secondAttribute="top" id="le9-gG-hH3"/>
-                                                    <constraint firstItem="ldL-kR-m8H" firstAttribute="leading" secondItem="ldU-jQ-l7G" secondAttribute="leading" constant="16" id="lf1-iI-jJ3"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ldL-kR-m8H" secondAttribute="trailing" constant="16" id="lf2-kK-lL3"/>
-                                                    <constraint firstItem="ldP-lS-n9I" firstAttribute="top" secondItem="ldL-kR-m8H" secondAttribute="bottom" constant="12" id="lf3-mM-nN3"/>
-                                                    <constraint firstItem="ldP-lS-n9I" firstAttribute="leading" secondItem="ldU-jQ-l7G" secondAttribute="leading" id="lf4-oO-pP3"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ldP-lS-n9I" secondAttribute="trailing" id="lf5-qQ-rR3"/>
-                                                    <constraint firstAttribute="bottom" secondItem="ldP-lS-n9I" secondAttribute="bottom" id="lf6-sS-tT3"/>
-                                                    <constraint firstItem="ldE-nU-p2K" firstAttribute="centerX" secondItem="ldP-lS-n9I" secondAttribute="centerX" id="lf7-uU-vV3"/>
-                                                    <constraint firstItem="ldE-nU-p2K" firstAttribute="centerY" secondItem="ldP-lS-n9I" secondAttribute="centerY" id="lf8-wW-xX3"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
