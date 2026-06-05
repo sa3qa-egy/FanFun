@@ -21,12 +21,16 @@ class UpcomingMatchCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = .clear
-        
+        containerView.backgroundColor = UIColor(named: "ff_surfuce")
         containerView.layer.shadowColor = UIColor.black.cgColor
         containerView.layer.shadowOpacity = 0.3
         containerView.layer.shadowOffset = CGSize(width: 0, height: 4)
         containerView.layer.shadowRadius = 8
         containerView.clipsToBounds = false
+        matchNameLabel.textColor = UIColor(named: "ff_primary")
+        homeTeamNameLabel.textColor = UIColor(named: "ff_primary_text")
+        awayTeamNameLabel.textColor = UIColor(named: "ff_primary_text")
+        dateTimeLabel.textColor = UIColor(named: "ff_primary_text")?.withAlphaComponent(0.6)
     }
     
     override func layoutSubviews() {

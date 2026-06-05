@@ -59,28 +59,29 @@ class TeamDetailsViewController: UIViewController {
     private func setupNavigationBar() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor(red: 0.08, green: 0.09, blue: 0.12, alpha: 1)
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.backgroundColor = UIColor(named: "ff_background")
+        appearance.titleTextAttributes = [.foregroundColor: UIColor(named: "ff_primary_text") ?? .label]
 
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
-        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.tintColor = UIColor(named: "ff_primary")
     }
 
     private func styleHeaderElements() {
+        view.backgroundColor = UIColor(named: "ff_background")
         teamImage.contentMode = .scaleAspectFill
-        teamImage.backgroundColor = UIColor(red: 0.08, green: 0.09, blue: 0.12, alpha: 0.05)
-        teamImage.layer.borderColor = UIColor(red: 0.08, green: 0.09, blue: 0.12, alpha: 0.2).cgColor
+        teamImage.backgroundColor = UIColor(named: "ff_surfuce")
+        teamImage.layer.borderColor = UIColor(named: "ff_primary")?.withAlphaComponent(0.3).cgColor
         teamImage.layer.borderWidth = 2
 
         teamName.font = .systemFont(ofSize: 22, weight: .bold)
-        teamName.textColor = .label
+        teamName.textColor = UIColor(named: "ff_primary_text")
         teamName.textAlignment = .center
         teamName.numberOfLines = 2
         teamName.text = ""
 
-        tabelView.backgroundColor = UIColor(red: 0.94, green: 0.95, blue: 0.97, alpha: 1)
+        tabelView.backgroundColor = UIColor(named: "ff_background")
         tabelView.separatorStyle = .none
         tabelView.rowHeight = UITableView.automaticDimension
         tabelView.estimatedRowHeight = 74
@@ -128,7 +129,7 @@ extension TeamDetailsViewController: TeamDetailsViewProtocol {
                 )
             } else {
                 self.teamImage.image = UIImage(systemName: "person.crop.circle.fill")
-                self.teamImage.tintColor = UIColor(red: 0.08, green: 0.09, blue: 0.12, alpha: 0.25)
+                self.teamImage.tintColor = UIColor(named: "ff_primary")?.withAlphaComponent(0.4)
             }
 
             self.tabelView.reloadData()
@@ -162,7 +163,7 @@ extension TeamDetailsViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
         header.textLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
-        header.textLabel?.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.35, alpha: 1)
+        header.textLabel?.textColor = UIColor(named: "ff_primary")
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

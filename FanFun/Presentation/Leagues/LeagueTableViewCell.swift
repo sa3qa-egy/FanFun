@@ -12,7 +12,7 @@ class LeagueTableViewCell: UITableViewCell {
     
     private let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = UIColor(named: "ff_surfuce")
         view.layer.cornerRadius = 12
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 0.15
@@ -34,7 +34,7 @@ class LeagueTableViewCell: UITableViewCell {
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16, weight: .medium)
-        label.textColor = .label
+        label.textColor = UIColor(named: "ff_primary_text")
         label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

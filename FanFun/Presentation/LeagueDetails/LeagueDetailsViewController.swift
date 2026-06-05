@@ -32,6 +32,24 @@ class LeagueDetailsViewController: UIViewController {
     @IBOutlet weak var teamsCollectionView: UICollectionView!
     @IBOutlet weak var teamsEmptyLabel: UILabel!
     
+    // MARK: - Programmatic empty-state views
+    
+    private lazy var upcomingEmptyView = makeEmptyView(
+        icon: "calendar.badge.exclamationmark",
+        title: "No Upcoming Matches",
+        subtitle: "Check back later for scheduled fixtures"
+    )
+    private lazy var previousEmptyView = makeEmptyView(
+        icon: "clock.arrow.circlepath",
+        title: "No Recent Results",
+        subtitle: "Match results will appear here"
+    )
+    private lazy var teamsEmptyView = makeEmptyView(
+        icon: "person.3.slash",
+        title: "No Teams Found",
+        subtitle: "Teams for this league are unavailable"
+    )
+    
     /// Dynamic height constraint for the previous matches collection view
     private var previousCollectionHeightConstraint: NSLayoutConstraint?
     
@@ -42,6 +60,7 @@ class LeagueDetailsViewController: UIViewController {
         title = leagueName
         setupNavigationBar()
         setupCollectionViews()
+        setupEmptyViews()
         presenter.viewDidLoad(sportType: sportType, leagueId: leagueId)
     }
     
@@ -55,13 +74,92 @@ class LeagueDetailsViewController: UIViewController {
     private func setupNavigationBar() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor(red: 0.08, green: 0.09, blue: 0.12, alpha: 1)
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.backgroundColor = UIColor(named: "ff_background")
+        appearance.titleTextAttributes = [.foregroundColor: UIColor(named: "ff_primary_text") ?? .label]
         
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
-        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.tintColor = UIColor(named: "ff_primary")
+        
+        view.backgroundColor = UIColor(named: "ff_background")
+        activityIndicator.color = UIColor(named: "ff_primary")
+    }
+    
+    // MARK: - Empty State Factory
+    
+    /// Builds a reusable empty-state card: icon + bold title + muted subtitle.
+    private func makeEmptyView(icon: String, title: String, subtitle: String) -> UIView {
+        let container = UIView()
+        container.backgroundColor = UIColor(named: "ff_surfuce")
+        container.layer.cornerRadius = 16
+        container.layer.shadowColor = UIColor.black.cgColor
+        container.layer.shadowOpacity = 0.08
+        container.layer.shadowOffset = CGSize(width: 0, height: 3)
+        container.layer.shadowRadius = 6
+        container.translatesAutoresizingMaskIntoConstraints = false
+        container.isHidden = true
+
+        let iconConfig = UIImage.SymbolConfiguration(pointSize: 32, weight: .light)
+        let iconView = UIImageView(image: UIImage(systemName: icon, withConfiguration: iconConfig))
+        iconView.tintColor = UIColor(named: "ff_primary")?.withAlphaComponent(0.65)
+        iconView.contentMode = .scaleAspectFit
+        iconView.translatesAutoresizingMaskIntoConstraints = false
+
+        let titleLabel = UILabel()
+        titleLabel.text = title
+        titleLabel.font = .systemFont(ofSize: 15, weight: .semibold)
+        titleLabel.textColor = UIColor(named: "ff_primary_text")
+        titleLabel.textAlignment = .center
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        let subtitleLabel = UILabel()
+        subtitleLabel.text = subtitle
+        subtitleLabel.font = .systemFont(ofSize: 12, weight: .regular)
+        subtitleLabel.textColor = UIColor(named: "ff_primary_text")?.withAlphaComponent(0.5)
+        subtitleLabel.textAlignment = .center
+        subtitleLabel.numberOfLines = 2
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        let stack = UIStackView(arrangedSubviews: [iconView, titleLabel, subtitleLabel])
+        stack.axis = .vertical
+        stack.alignment = .center
+        stack.spacing = 6
+        stack.translatesAutoresizingMaskIntoConstraints = false
+
+        container.addSubview(stack)
+        NSLayoutConstraint.activate([
+            stack.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            stack.centerYAnchor.constraint(equalTo: container.centerYAnchor),
+            stack.leadingAnchor.constraint(greaterThanOrEqualTo: container.leadingAnchor, constant: 16),
+            stack.trailingAnchor.constraint(lessThanOrEqualTo: container.trailingAnchor, constant: -16),
+            iconView.heightAnchor.constraint(equalToConstant: 40),
+            container.heightAnchor.constraint(equalToConstant: 110)
+        ])
+        return container
+    }
+    
+    /// Attaches each empty-state view on top of its matching collection view's superview.
+    private func setupEmptyViews() {
+        // Hide the old storyboard labels — we use our own views instead
+        upcomingEmptyLabel.isHidden = true
+        previousEmptyLabel.isHidden = true
+        teamsEmptyLabel.isHidden = true
+        
+        let pairs: [(UIView, UIView)] = [
+            (upcomingEmptyView, upcomingCollectionView),
+            (previousEmptyView, previousCollectionView),
+            (teamsEmptyView,    teamsCollectionView)
+        ]
+        for (emptyView, collectionView) in pairs {
+            guard let superview = collectionView.superview else { continue }
+            superview.addSubview(emptyView)
+            NSLayoutConstraint.activate([
+                emptyView.leadingAnchor.constraint(equalTo: collectionView.leadingAnchor, constant: 16),
+                emptyView.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor, constant: -16),
+                emptyView.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor)
+            ])
+        }
     }
     
     private func setupCollectionViews() {
@@ -108,14 +206,14 @@ extension LeagueDetailsViewController: LeagueDetailsViewProtocol {
     func reloadUpcomingMatches() {
         DispatchQueue.main.async {
             self.upcomingCollectionView.reloadData()
-            self.upcomingEmptyLabel.isHidden = self.presenter.numberOfUpcomingMatches > 0
+            self.upcomingEmptyView.isHidden = self.presenter.numberOfUpcomingMatches > 0
         }
     }
     
     func reloadPreviousMatches() {
         DispatchQueue.main.async {
             self.previousCollectionView.reloadData()
-            self.previousEmptyLabel.isHidden = self.presenter.numberOfPreviousMatches > 0
+            self.previousEmptyView.isHidden = self.presenter.numberOfPreviousMatches > 0
             self.updatePreviousCollectionHeight()
         }
     }
@@ -123,7 +221,7 @@ extension LeagueDetailsViewController: LeagueDetailsViewProtocol {
     func reloadTeams() {
         DispatchQueue.main.async {
             self.teamsCollectionView.reloadData()
-            self.teamsEmptyLabel.isHidden = self.presenter.numberOfTeams > 0
+            self.teamsEmptyView.isHidden = self.presenter.numberOfTeams > 0
         }
     }
     

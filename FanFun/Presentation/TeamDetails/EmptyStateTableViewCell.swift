@@ -12,7 +12,7 @@ class EmptyStateTableViewCell: UITableViewCell {
 
     private let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = UIColor(named: "ff_surfuce")
         view.layer.cornerRadius = 12
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 0.06
@@ -26,7 +26,7 @@ class EmptyStateTableViewCell: UITableViewCell {
     private let iconImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.tintColor = UIColor(red: 0.7, green: 0.72, blue: 0.76, alpha: 1)
+        iv.tintColor = UIColor(named: "ff_primary")?.withAlphaComponent(0.5)
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
@@ -34,7 +34,7 @@ class EmptyStateTableViewCell: UITableViewCell {
     private let messageLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14, weight: .regular)
-        label.textColor = UIColor(red: 0.6, green: 0.62, blue: 0.66, alpha: 1)
+        label.textColor = UIColor(named: "ff_primary_text")?.withAlphaComponent(0.6)
         label.textAlignment = .center
         label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
