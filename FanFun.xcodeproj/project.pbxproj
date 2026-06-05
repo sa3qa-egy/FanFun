@@ -12,7 +12,18 @@
 		03992A382FC24E510056A4B0 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 03992A372FC24E510056A4B0 /* SDWebImageMapKit */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		03A7B6D22FD371BA009C8838 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03FE7CD32FBE645000D3B474 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03FE7CDA2FBE645000D3B474;
+			remoteInfo = FanFun;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		03A7B6CE2FD371BA009C8838 /* FanFunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FanFunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03FE7CDB2FBE645000D3B474 /* FanFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FanFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -27,6 +38,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		03A7B6CF2FD371BA009C8838 /* FanFunTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = FanFunTests;
+			sourceTree = "<group>";
+		};
 		03FE7CDD2FBE645000D3B474 /* FanFun */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -38,6 +54,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		03A7B6CB2FD371BA009C8838 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03FE7CD82FBE645000D3B474 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -55,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				03FE7CDD2FBE645000D3B474 /* FanFun */,
+				03A7B6CF2FD371BA009C8838 /* FanFunTests */,
 				03FE7CDC2FBE645000D3B474 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				03FE7CDB2FBE645000D3B474 /* FanFun.app */,
+				03A7B6CE2FD371BA009C8838 /* FanFunTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +95,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		03A7B6CD2FD371BA009C8838 /* FanFunTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03A7B6D62FD371BA009C8838 /* Build configuration list for PBXNativeTarget "FanFunTests" */;
+			buildPhases = (
+				03A7B6CA2FD371BA009C8838 /* Sources */,
+				03A7B6CB2FD371BA009C8838 /* Frameworks */,
+				03A7B6CC2FD371BA009C8838 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03A7B6D32FD371BA009C8838 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				03A7B6CF2FD371BA009C8838 /* FanFunTests */,
+			);
+			name = FanFunTests;
+			packageProductDependencies = (
+			);
+			productName = FanFunTests;
+			productReference = 03A7B6CE2FD371BA009C8838 /* FanFunTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		03FE7CDA2FBE645000D3B474 /* FanFun */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03FE7CF12FBE645200D3B474 /* Build configuration list for PBXNativeTarget "FanFun" */;
@@ -105,6 +153,10 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					03A7B6CD2FD371BA009C8838 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 03FE7CDA2FBE645000D3B474;
+					};
 					03FE7CDA2FBE645000D3B474 = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -129,11 +181,19 @@
 			projectRoot = "";
 			targets = (
 				03FE7CDA2FBE645000D3B474 /* FanFun */,
+				03A7B6CD2FD371BA009C8838 /* FanFunTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		03A7B6CC2FD371BA009C8838 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03FE7CD92FBE645000D3B474 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -144,6 +204,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		03A7B6CA2FD371BA009C8838 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03FE7CD72FBE645000D3B474 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -153,7 +220,59 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		03A7B6D32FD371BA009C8838 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03FE7CDA2FBE645000D3B474 /* FanFun */;
+			targetProxy = 03A7B6D22FD371BA009C8838 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		03A7B6D42FD371BA009C8838 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.8;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.compny.FanFunTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FanFun.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FanFun";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		03A7B6D52FD371BA009C8838 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.8;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.compny.FanFunTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FanFun.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FanFun";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
 		03FE7CF22FBE645200D3B474 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -330,6 +449,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		03A7B6D62FD371BA009C8838 /* Build configuration list for PBXNativeTarget "FanFunTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03A7B6D42FD371BA009C8838 /* Debug */,
+				03A7B6D52FD371BA009C8838 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		03FE7CD62FBE645000D3B474 /* Build configuration list for PBXProject "FanFun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
