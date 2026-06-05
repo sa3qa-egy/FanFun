@@ -24,7 +24,6 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
         self.repository = repository
     }
     
-    // MARK: - LeagueDetailsPresenterProtocol
     
     var numberOfUpcomingMatches: Int {
         return upcomingMatches.count

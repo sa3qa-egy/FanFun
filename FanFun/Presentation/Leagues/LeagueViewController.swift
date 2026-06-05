@@ -22,7 +22,7 @@ class LeagueViewController: UIViewController {
     
     private let offlineBannerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.systemOrange.withAlphaComponent(0.92)
+        view.backgroundColor = UIColor(named: "ff_primary")?.withAlphaComponent(0.92) ?? UIColor.systemOrange.withAlphaComponent(0.92)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isHidden = true
         view.alpha = 0
@@ -52,9 +52,33 @@ class LeagueViewController: UIViewController {
     }
     
     private func setupUI() {
+        view.backgroundColor = UIColor(named: "ff_background")
+        tableView.backgroundColor = UIColor(named: "ff_background")
+        activityIndicator.color = UIColor(named: "ff_primary")
+        setupSearchBar()
         setupTableView()
         setupActivityIndicator()
         setupOfflineBanner()
+    }
+    
+    private func setupSearchBar() {
+        // Match search bar background to screen background
+        searchBar.barTintColor = UIColor(named: "ff_background")
+        searchBar.backgroundColor = UIColor(named: "ff_background")
+        searchBar.tintColor = UIColor(named: "ff_primary")
+        
+        if let textField = searchBar.value(forKey: "searchField") as? UITextField {
+            textField.backgroundColor = UIColor(named: "ff_surfuce")
+            textField.textColor = UIColor(named: "ff_primary_text")
+            textField.tintColor = UIColor(named: "ff_primary")
+            textField.attributedPlaceholder = NSAttributedString(
+                string: "Search leagues…",
+                attributes: [.foregroundColor: (UIColor(named: "ff_primary_text") ?? UIColor.secondaryLabel).withAlphaComponent(0.5)]
+            )
+        }
+        
+        // Remove the bottom separator line under the search bar
+        searchBar.backgroundImage = UIImage()
     }
     
     private func setupTableView() {
@@ -68,9 +92,13 @@ class LeagueViewController: UIViewController {
     }
     
     private func setupActivityIndicator() {
-        activityIndicator.center = view.center
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.hidesWhenStopped = true
         view.addSubview(activityIndicator)
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
     
     private func setupOfflineBanner() {
