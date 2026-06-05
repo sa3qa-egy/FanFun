@@ -4,7 +4,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     
     weak var view: LeagueDetailsViewProtocol?
     private let repository: SportsRepositoryProtocol
-    private let networkMonitor: NetworkMonitor
+    private let networkMonitor: NetworkMonitorProtocol
     private var sportType: String = ""
     private var leagueId: Int = 0
     
@@ -16,7 +16,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     
     init(
         repository: SportsRepositoryProtocol = SportsRepositoryImpl(),
-        networkMonitor: NetworkMonitor = NetworkMonitor.shared
+        networkMonitor: NetworkMonitorProtocol = NetworkMonitor.shared
     ) {
         self.repository = repository
         self.networkMonitor = networkMonitor
