@@ -1,0 +1,18 @@
+"/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Local/LeagueEntity+CoreDataProperties.swift":
+  dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/LeagueEntity+CoreDataProperties.d"
+  object: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/LeagueEntity+CoreDataProperties.o"
+  const-values: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/LeagueEntity+CoreDataProperties.swiftconstvalues"
+  swift-dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/LeagueEntity+CoreDataProperties.swiftdeps"
+  diagnostics: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/LeagueEntity+CoreDataProperties.dia"
+"/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Local/CoreDataManager.swift":
+  dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/CoreDataManager.d"
+  diagnostics: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/CoreDataManager.dia"
+  const-values: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/CoreDataManager.swiftconstvalues"
+  object: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/CoreDataManager.o"
+  swift-dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/CoreDataManager.swiftdeps"
+"/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Local/LeagueEntity+CoreDataClass.swift":
+  dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/LeagueEntity+CoreDataClass.d"
+  swift-dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/LeagueEntity+CoreDataClass.swiftdeps"
+  object: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/LeagueEntity+CoreDataClass.o"
+  diagnostics: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/LeagueEntity+CoreDataClass.dia"
+  const-values: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/LeagueEntity+CoreDataClass.swiftconstvalues"

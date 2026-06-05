@@ -1,0 +1,18 @@
+"/Users/abdelhamed/Desktop/FanFun/FanFun/Presentation/Home/Sport.swift":
+  diagnostics: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/Sport.dia"
+  object: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/Sport.o"
+  swift-dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/Sport.swiftdeps"
+  const-values: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/Sport.swiftconstvalues"
+  dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/Sport.d"
+"/Users/abdelhamed/Desktop/FanFun/FanFun/Presentation/Home/SportCollectionViewCell.swift":
+  object: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/SportCollectionViewCell.o"
+  dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/SportCollectionViewCell.d"
+  const-values: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/SportCollectionViewCell.swiftconstvalues"
+  swift-dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/SportCollectionViewCell.swiftdeps"
+  diagnostics: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/SportCollectionViewCell.dia"
+"/Users/abdelhamed/Desktop/FanFun/FanFun/Presentation/Home/Presenter.swift":
+  object: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/Presenter.o"
+  dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/Presenter.d"
+  swift-dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/Presenter.swiftdeps"
+  diagnostics: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/Presenter.dia"
+  const-values: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/Presenter.swiftconstvalues"

@@ -1,0 +1,18 @@
+"/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Model/LeagueDetailsResponse.swift":
+  swift-dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsResponse.swiftdeps"
+  diagnostics: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsResponse.dia"
+  dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsResponse.d"
+  const-values: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsResponse.swiftconstvalues"
+  object: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsResponse.o"
+"/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Local/LeagueLocalDataSource.swift":
+  swift-dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueLocalDataSource.swiftdeps"
+  object: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueLocalDataSource.o"
+  diagnostics: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueLocalDataSource.dia"
+  const-values: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueLocalDataSource.swiftconstvalues"
+  dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueLocalDataSource.d"
+"/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Model/LeagueResponse.swift":
+  const-values: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueResponse.swiftconstvalues"
+  dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueResponse.d"
+  object: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueResponse.o"
+  swift-dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueResponse.swiftdeps"
+  diagnostics: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueResponse.dia"

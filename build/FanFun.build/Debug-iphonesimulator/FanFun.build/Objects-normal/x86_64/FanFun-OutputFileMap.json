@@ -1,0 +1,318 @@
+{
+  "" : {
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/FanFun-master.dia",
+    "emit-module-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/FanFun-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/FanFun-master-emit-module.dia",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/FanFun-master.swiftdeps"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/GeneratedAssetSymbols~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/AppDelegate.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/AppDelegate.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/AppDelegate.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/AppDelegate.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/AppDelegate.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/AppDelegate.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/AppDelegate.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/AppDelegate.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/AppDelegate~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Local/CoreDataManager.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/CoreDataManager.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/CoreDataManager.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/CoreDataManager.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/CoreDataManager.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/CoreDataManager.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/CoreDataManager.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/CoreDataManager.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/CoreDataManager~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Local/LeagueEntity+CoreDataClass.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueEntity+CoreDataClass.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueEntity+CoreDataClass.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueEntity+CoreDataClass.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueEntity+CoreDataClass.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueEntity+CoreDataClass.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueEntity+CoreDataClass.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueEntity+CoreDataClass.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueEntity+CoreDataClass~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Local/LeagueEntity+CoreDataProperties.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueEntity+CoreDataProperties.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueEntity+CoreDataProperties.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueEntity+CoreDataProperties.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueEntity+CoreDataProperties.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueEntity+CoreDataProperties.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueEntity+CoreDataProperties.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueEntity+CoreDataProperties.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueEntity+CoreDataProperties~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Local/LeagueLocalDataSource.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueLocalDataSource.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueLocalDataSource.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueLocalDataSource.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueLocalDataSource.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueLocalDataSource.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueLocalDataSource.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueLocalDataSource.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueLocalDataSource~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Model/LeagueDetailsResponse.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsResponse.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsResponse.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsResponse.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsResponse.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsResponse.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsResponse.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsResponse.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsResponse~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Model/LeagueResponse.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueResponse.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueResponse.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueResponse.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueResponse.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueResponse.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueResponse.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueResponse.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueResponse~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Remote/APIKeyInterceptor.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/APIKeyInterceptor.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/APIKeyInterceptor.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/APIKeyInterceptor.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/APIKeyInterceptor.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/APIKeyInterceptor.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/APIKeyInterceptor.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/APIKeyInterceptor.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/APIKeyInterceptor~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Remote/NetworkMonitor.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/NetworkMonitor.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/NetworkMonitor.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/NetworkMonitor.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/NetworkMonitor.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/NetworkMonitor.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/NetworkMonitor.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/NetworkMonitor.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/NetworkMonitor~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Remote/NetworkService.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/NetworkService.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/NetworkService.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/NetworkService.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/NetworkService.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/NetworkService.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/NetworkService.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/NetworkService.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/NetworkService~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Remote/Secrets.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Secrets.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Secrets.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Secrets.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Secrets.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Secrets.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Secrets.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Secrets.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Secrets~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Remote/Secrets.template.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Secrets.template.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Secrets.template.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Secrets.template.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Secrets.template.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Secrets.template.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Secrets.template.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Secrets.template.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Secrets.template~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Repository/LeagueDetailsRepository.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsRepository.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsRepository.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsRepository.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsRepository.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsRepository.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsRepository.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsRepository.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsRepository~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Repository/LeagueRepository.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueRepository.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueRepository.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueRepository.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueRepository.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueRepository.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueRepository.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueRepository.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueRepository~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Presentation/Home/HomeContract.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/HomeContract.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/HomeContract.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/HomeContract.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/HomeContract.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/HomeContract.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/HomeContract.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/HomeContract.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/HomeContract~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Presentation/Home/HomeViewController.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/HomeViewController.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/HomeViewController.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/HomeViewController.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/HomeViewController.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/HomeViewController.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/HomeViewController.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/HomeViewController.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/HomeViewController~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Presentation/Home/Presenter.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Presenter.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Presenter.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Presenter.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Presenter.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Presenter.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Presenter.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Presenter.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Presenter~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Presentation/Home/Sport.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Sport.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Sport.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Sport.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Sport.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Sport.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Sport.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Sport.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/Sport~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Presentation/Home/SportCollectionViewCell.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/SportCollectionViewCell.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/SportCollectionViewCell.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/SportCollectionViewCell.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/SportCollectionViewCell.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/SportCollectionViewCell.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/SportCollectionViewCell.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/SportCollectionViewCell.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/SportCollectionViewCell~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Presentation/LeagueDetails/LeagueDetailsContract.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsContract.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsContract.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsContract.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsContract.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsContract.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsContract.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsContract.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsContract~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Presentation/LeagueDetails/LeagueDetailsPresenter.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsPresenter.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsPresenter.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsPresenter.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsPresenter.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsPresenter.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsPresenter.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsPresenter.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsPresenter~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Presentation/LeagueDetails/LeagueDetailsViewController.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsViewController.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsViewController.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsViewController.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsViewController.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsViewController.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsViewController.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsViewController.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueDetailsViewController~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Presentation/LeagueDetails/PreviousMatchCell.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/PreviousMatchCell.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/PreviousMatchCell.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/PreviousMatchCell.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/PreviousMatchCell.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/PreviousMatchCell.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/PreviousMatchCell.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/PreviousMatchCell.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/PreviousMatchCell~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Presentation/LeagueDetails/TeamCell.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/TeamCell.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/TeamCell.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/TeamCell.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/TeamCell.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/TeamCell.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/TeamCell.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/TeamCell.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/TeamCell~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Presentation/LeagueDetails/UpcomingMatchCell.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/UpcomingMatchCell.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/UpcomingMatchCell.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/UpcomingMatchCell.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/UpcomingMatchCell.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/UpcomingMatchCell.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/UpcomingMatchCell.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/UpcomingMatchCell.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/UpcomingMatchCell~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Presentation/Leagues/LeagueContract.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueContract.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueContract.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueContract.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueContract.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueContract.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueContract.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueContract.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueContract~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Presentation/Leagues/LeaguesPresenter.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeaguesPresenter.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeaguesPresenter.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeaguesPresenter.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeaguesPresenter.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeaguesPresenter.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeaguesPresenter.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeaguesPresenter.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeaguesPresenter~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Presentation/Leagues/LeagueTableViewCell.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueTableViewCell.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueTableViewCell.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueTableViewCell.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueTableViewCell.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueTableViewCell.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueTableViewCell.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueTableViewCell.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueTableViewCell~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/Presentation/Leagues/LeagueViewController.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueViewController.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueViewController.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueViewController.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueViewController.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueViewController.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueViewController.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueViewController.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/LeagueViewController~partial.swiftmodule"
+  },
+  "/Users/abdelhamed/Desktop/FanFun/FanFun/SceneDelegate.swift" : {
+    "const-values" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/SceneDelegate.swiftconstvalues",
+    "dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/SceneDelegate.d",
+    "diagnostics" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/SceneDelegate.dia",
+    "index-unit-output-path" : "/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/SceneDelegate.o",
+    "llvm-bc" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/SceneDelegate.bc",
+    "object" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/SceneDelegate.o",
+    "swift-dependencies" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/SceneDelegate.swiftdeps",
+    "swiftmodule" : "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/x86_64/SceneDelegate~partial.swiftmodule"
+  }
+}

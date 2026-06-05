@@ -1,0 +1,18 @@
+"/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Remote/NetworkService.swift":
+  diagnostics: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/NetworkService.dia"
+  object: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/NetworkService.o"
+  const-values: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/NetworkService.swiftconstvalues"
+  dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/NetworkService.d"
+  swift-dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/NetworkService.swiftdeps"
+"/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Remote/NetworkMonitor.swift":
+  swift-dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/NetworkMonitor.swiftdeps"
+  diagnostics: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/NetworkMonitor.dia"
+  dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/NetworkMonitor.d"
+  object: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/NetworkMonitor.o"
+  const-values: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/NetworkMonitor.swiftconstvalues"
+"/Users/abdelhamed/Desktop/FanFun/FanFun/Data/Remote/APIKeyInterceptor.swift":
+  dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/APIKeyInterceptor.d"
+  const-values: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/APIKeyInterceptor.swiftconstvalues"
+  swift-dependencies: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/APIKeyInterceptor.swiftdeps"
+  object: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/APIKeyInterceptor.o"
+  diagnostics: "/Users/abdelhamed/Desktop/FanFun/build/FanFun.build/Debug-iphonesimulator/FanFun.build/Objects-normal/arm64/APIKeyInterceptor.dia"

@@ -189,6 +189,34 @@ struct Team: Codable {
         teamLogo = try container.decodeIfPresent(String.self, forKey: .teamLogo)
     }
 }
+extension Fixture {
+    init(eventKey: Int, eventDate: String, eventTime: String, eventHomeTeam: String, homeTeamKey: Int, eventAwayTeam: String, awayTeamKey: Int, eventFinalResult: String?, eventStatus: String?, homeTeamLogo: String?, awayTeamLogo: String?) {
+        self.eventKey = eventKey
+        self.eventDate = eventDate
+        self.eventTime = eventTime
+        self.eventHomeTeam = eventHomeTeam
+        self.homeTeamKey = homeTeamKey
+        self.eventAwayTeam = eventAwayTeam
+        self.awayTeamKey = awayTeamKey
+        self.eventHalftimeResult = nil
+        self.eventFinalResult = eventFinalResult
+        self.eventFtResult = nil
+        self.eventPenaltyResult = nil
+        self.eventStatus = eventStatus
+        self.countryName = nil
+        self.leagueName = nil
+        self.leagueKey = nil
+        self.leagueRound = nil
+        self.leagueSeason = nil
+        self.eventLive = nil
+        self.eventStadium = nil
+        self.homeTeamLogo = homeTeamLogo
+        self.awayTeamLogo = awayTeamLogo
+        self.leagueLogo = nil
+        self.countryLogo = nil
+    }
+}
+
 extension Team {
     init(teamKey: Int, teamName: String, teamLogo: String?) {
         self.teamKey = teamKey
