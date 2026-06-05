@@ -35,6 +35,25 @@ class LeagueDetailsViewController: UIViewController {
     /// Dynamic height constraint for the previous matches collection view
     private var previousCollectionHeightConstraint: NSLayoutConstraint?
     
+    private let offlineBannerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.systemOrange.withAlphaComponent(0.92)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
+        view.alpha = 0
+        return view
+    }()
+    
+    private let offlineBannerLabel: UILabel = {
+        let label = UILabel()
+        label.text = "📡  You're offline — showing cached data"
+        label.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
+        label.textColor = .white
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -42,6 +61,7 @@ class LeagueDetailsViewController: UIViewController {
         title = leagueName
         setupNavigationBar()
         setupCollectionViews()
+        setupOfflineBanner()
         presenter.viewDidLoad(sportType: sportType, leagueId: leagueId)
     }
     
@@ -82,6 +102,21 @@ class LeagueDetailsViewController: UIViewController {
             previousCollectionHeightConstraint = previousCollectionView.heightAnchor.constraint(equalToConstant: 100)
             previousCollectionHeightConstraint?.isActive = true
         }
+    }
+    
+    private func setupOfflineBanner() {
+        offlineBannerView.addSubview(offlineBannerLabel)
+        view.addSubview(offlineBannerView)
+        
+        NSLayoutConstraint.activate([
+            offlineBannerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            offlineBannerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            offlineBannerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            offlineBannerView.heightAnchor.constraint(equalToConstant: 36),
+            
+            offlineBannerLabel.centerXAnchor.constraint(equalTo: offlineBannerView.centerXAnchor),
+            offlineBannerLabel.centerYAnchor.constraint(equalTo: offlineBannerView.centerYAnchor)
+        ])
     }
     
     private func updatePreviousCollectionHeight() {
@@ -132,6 +167,25 @@ extension LeagueDetailsViewController: LeagueDetailsViewProtocol {
             let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true)
+        }
+    }
+    
+    func showOfflineBanner() {
+        DispatchQueue.main.async {
+            self.offlineBannerView.isHidden = false
+            UIView.animate(withDuration: 0.35, delay: 0, options: .curveEaseOut) {
+                self.offlineBannerView.alpha = 1
+            }
+        }
+    }
+    
+    func hideOfflineBanner() {
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
+                self.offlineBannerView.alpha = 0
+            }, completion: { _ in
+                self.offlineBannerView.isHidden = true
+            })
         }
     }
 }

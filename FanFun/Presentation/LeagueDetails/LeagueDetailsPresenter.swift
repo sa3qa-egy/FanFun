@@ -1,14 +1,10 @@
-//
-//  LeagueDetailsPresenter.swift
-//  FanFun
-//
-
 import Foundation
 
 class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     
     weak var view: LeagueDetailsViewProtocol?
     private let repository: SportsRepositoryProtocol
+    private let networkMonitor: NetworkMonitor
     private var sportType: String = ""
     private var leagueId: Int = 0
     
@@ -19,12 +15,12 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     private let dispatchGroup = DispatchGroup()
     
     init(
-        repository: SportsRepositoryProtocol = SportsRepositoryImpl()
+        repository: SportsRepositoryProtocol = SportsRepositoryImpl(),
+        networkMonitor: NetworkMonitor = NetworkMonitor.shared
     ) {
         self.repository = repository
+        self.networkMonitor = networkMonitor
     }
-    
-    // MARK: - LeagueDetailsPresenterProtocol
     
     var numberOfUpcomingMatches: Int {
         return upcomingMatches.count
@@ -57,9 +53,29 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
         return teams[index]
     }
     
-    // MARK: - Private
-    
     private func fetchAllData() {
+        if !networkMonitor.isConnected && repository.isFavorite(leagueKey: leagueId, sportType: sportType) {
+            loadFromCache()
+        } else {
+            loadFromNetwork()
+        }
+    }
+
+    private func loadFromCache() {
+        upcomingMatches = repository.getCachedUpcomingFixtures(leagueKey: leagueId, sportType: sportType)
+        previousMatches = repository.getCachedPreviousFixtures(leagueKey: leagueId, sportType: sportType)
+        teams = repository.getCachedTeams(leagueKey: leagueId, sportType: sportType)
+        
+        view?.reloadUpcomingMatches()
+        view?.reloadPreviousMatches()
+        view?.reloadTeams()
+        
+        view?.hideLoading()
+        view?.showOfflineBanner()
+    }
+
+    private func loadFromNetwork() {
+        view?.hideOfflineBanner()
         var fetchErrors: [Error] = []
         
         dispatchGroup.enter()
@@ -102,12 +118,10 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
         }
         
         dispatchGroup.notify(queue: .main) { [weak self] in
-            self?.view?.hideLoading()
-            if let firstError = fetchErrors.first,
-               self?.upcomingMatches.isEmpty == true,
-               self?.previousMatches.isEmpty == true,
-               self?.teams.isEmpty == true {
-                self?.view?.showError(message: firstError.localizedDescription)
+            guard let self = self else { return }
+            self.view?.hideLoading()
+            if !fetchErrors.isEmpty && self.upcomingMatches.isEmpty && self.previousMatches.isEmpty && self.teams.isEmpty {
+                self.view?.showError(message: "Failed to load league data.")
             }
         }
     }
