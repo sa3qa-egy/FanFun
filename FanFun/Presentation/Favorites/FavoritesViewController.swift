@@ -83,9 +83,19 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
-        header.textLabel?.font = .systemFont(ofSize: 18, weight: .bold)
-        header.textLabel?.textColor = .label
-        header.textLabel?.textAlignment = .natural
+        if #available(iOS 14.0, *) {
+            var content = header.defaultContentConfiguration()
+            content.text = presenter.sectionTitle(for: section)
+            content.textProperties.font = .systemFont(ofSize: 18, weight: .bold)
+            content.textProperties.color = .label
+            header.contentConfiguration = content
+        } else {
+            header.textLabel?.font = .systemFont(ofSize: 18, weight: .bold)
+            header.textLabel?.textColor = .label
+            header.textLabel?.numberOfLines = 0
+            header.textLabel?.lineBreakMode = .byWordWrapping
+            header.textLabel?.sizeToFit()
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
