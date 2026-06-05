@@ -7,6 +7,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     private let networkMonitor: NetworkMonitor
     private var sportType: String = ""
     private var leagueId: Int = 0
+    private var leagueName: String = ""
     
     private var upcomingMatches: [Fixture] = []
     private var previousMatches: [Fixture] = []
@@ -35,9 +36,11 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
         return teams.count
     }
     
-    func viewDidLoad(sportType: String, leagueId: Int) {
+    func viewDidLoad(sportType: String, leagueId: Int, leagueName: String) {
         self.sportType = sportType
         self.leagueId = leagueId
+        self.leagueName = leagueName
+        view?.updateFavoriteIcon(isFavorite: repository.isFavorite(leagueKey: leagueId, sportType: sportType))
         view?.showLoading()
         fetchAllData()
     }
@@ -52,6 +55,19 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     
     func getTeam(at index: Int) -> Team {
         return teams[index]
+    }
+    
+    func toggleFavorite() {
+        let isFav = repository.isFavorite(leagueKey: leagueId, sportType: sportType)
+        if isFav {
+            repository.removeFavorite(leagueKey: leagueId, sportType: sportType)
+            view?.updateFavoriteIcon(isFavorite: false)
+        } else {
+            let league = League(leagueKey: leagueId, leagueName: leagueName, countryKey: nil, countryName: nil, leagueLogo: nil, countryLogo: nil, leagueYear: nil)
+            repository.addFavorite(league: league, sportType: sportType) { [weak self] in
+                self?.view?.updateFavoriteIcon(isFavorite: true)
+            }
+        }
     }
     
     private func fetchAllData() {
