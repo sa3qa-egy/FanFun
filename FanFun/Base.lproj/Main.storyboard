@@ -198,20 +198,61 @@
         <!--Favorite-->
         <scene sceneID="9dl-ws-AZ2">
             <objects>
-                <viewController id="kcK-0D-kMk" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kzN-vw-bbQ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="hjm-rd-5LK"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
+                <navigationController id="kcK-0D-kMk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favorite" image="star" catalog="system" id="q4I-cQ-V7B">
                         <color key="badgeColor" name="ff_primary"/>
                     </tabBarItem>
-                </viewController>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nav-bar-fav">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fav-vc-123" kind="relationship" relationship="rootViewController" id="fav-root-seg"/>
+                    </connections>
+                </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yDc-a6-Lfb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1075.5725190839694" y="682.3943661971831"/>
+            <point key="canvasLocation" x="1561" y="682"/>
+        </scene>
+        <!--Favorites View Controller-->
+        <scene sceneID="fav-vc-scene">
+            <objects>
+                <viewController storyboardIdentifier="FavoritesViewController" id="fav-vc-123" customClass="FavoritesViewController" customModule="FanFun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fav-view-456">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fav-table-789">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Favorites Yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fav-empty-lbl">
+                                <rect key="frame" x="134.66666666666666" y="415.66666666666669" width="123.66666666666666" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fav-safe-area"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fav-table-789" firstAttribute="leading" secondItem="fav-safe-area" secondAttribute="leading" id="fav-c1"/>
+                            <constraint firstItem="fav-safe-area" firstAttribute="trailing" secondItem="fav-table-789" secondAttribute="trailing" id="fav-c2"/>
+                            <constraint firstItem="fav-safe-area" firstAttribute="bottom" secondItem="fav-table-789" secondAttribute="bottom" id="fav-c3"/>
+                            <constraint firstItem="fav-table-789" firstAttribute="top" secondItem="fav-safe-area" secondAttribute="top" id="fav-c4"/>
+                            <constraint firstItem="fav-empty-lbl" firstAttribute="centerX" secondItem="fav-view-456" secondAttribute="centerX" id="fav-c5"/>
+                            <constraint firstItem="fav-empty-lbl" firstAttribute="centerY" secondItem="fav-view-456" secondAttribute="centerY" id="fav-c6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fav-nav-item"/>
+                    <connections>
+                        <outlet property="emptyStateLabel" destination="fav-empty-lbl" id="fav-out-lbl"/>
+                        <outlet property="tableView" destination="fav-table-789" id="fav-out-table"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fav-first-responder" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1909" y="682"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5su-PY-aTC">
@@ -512,6 +553,9 @@
         <namedColor name="ff_surfuce">
             <color red="0.78431372549019607" green="0.83921568627450982" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

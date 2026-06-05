@@ -1,0 +1,25 @@
+Target dependency graph (10 targets)
+Target 'FanFun' in project 'FanFun'
+➜ Explicit dependency on target 'SDWebImage' in project 'SDWebImage'
+➜ Explicit dependency on target 'Alamofire' in project 'Alamofire'
+➜ Explicit dependency on target 'SDWebImageMapKit' in project 'SDWebImage'
+Target 'SDWebImageMapKit' in project 'SDWebImage'
+➜ Explicit dependency on target 'SDWebImageMapKit' in project 'SDWebImage'
+➜ Explicit dependency on target 'SDWebImage_SDWebImageMapKit' in project 'SDWebImage'
+➜ Explicit dependency on target 'SDWebImage' in project 'SDWebImage'
+Target 'SDWebImageMapKit' in project 'SDWebImage'
+➜ Explicit dependency on target 'SDWebImage_SDWebImageMapKit' in project 'SDWebImage'
+➜ Explicit dependency on target 'SDWebImage' in project 'SDWebImage'
+Target 'SDWebImage_SDWebImageMapKit' in project 'SDWebImage' (no dependencies)
+Target 'Alamofire' in project 'Alamofire'
+➜ Explicit dependency on target 'Alamofire' in project 'Alamofire'
+➜ Explicit dependency on target 'Alamofire_Alamofire' in project 'Alamofire'
+Target 'Alamofire' in project 'Alamofire'
+➜ Explicit dependency on target 'Alamofire_Alamofire' in project 'Alamofire'
+Target 'Alamofire_Alamofire' in project 'Alamofire' (no dependencies)
+Target 'SDWebImage' in project 'SDWebImage'
+➜ Explicit dependency on target 'SDWebImage' in project 'SDWebImage'
+➜ Explicit dependency on target 'SDWebImage_SDWebImage' in project 'SDWebImage'
+Target 'SDWebImage' in project 'SDWebImage'
+➜ Explicit dependency on target 'SDWebImage_SDWebImage' in project 'SDWebImage'
+Target 'SDWebImage_SDWebImage' in project 'SDWebImage' (no dependencies)

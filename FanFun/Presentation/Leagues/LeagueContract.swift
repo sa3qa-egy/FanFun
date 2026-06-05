@@ -5,6 +5,7 @@ protocol LeagueViewProtocol: AnyObject {
     func showError(message: String)
     func showOfflineNotice()
     func hideOfflineNotice()
+    func updateFavoriteStatus(at index: Int, isFavorite: Bool)
 }
 
 protocol LeaguePresenterProtocol {
@@ -13,4 +14,6 @@ protocol LeaguePresenterProtocol {
     func getLeague(at index: Int) -> League
     func filterLeagues(with query: String)
     func didSelectLeague(at index: Int)
+    func isFavorite(at index: Int) -> Bool
+    func toggleFavorite(at index: Int)
 }

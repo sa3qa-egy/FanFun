@@ -12,6 +12,8 @@ protocol LeagueDetailsViewProtocol: AnyObject {
     func reloadPreviousMatches()
     func reloadTeams()
     func showError(message: String)
+    func showOfflineBanner()
+    func hideOfflineBanner()
 }
 
 protocol LeagueDetailsPresenterProtocol {
