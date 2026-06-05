@@ -29,19 +29,21 @@ class HomeViewController: UIViewController {
     private func setupNavigationBar() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .systemBackground 
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.label]
+        appearance.backgroundColor = UIColor(named: "ff_background")
+        appearance.titleTextAttributes = [.foregroundColor: UIColor(named: "ff_primary_text") ?? .label]
         
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         
-        navigationController?.navigationBar.tintColor = .systemBlue
+        navigationController?.navigationBar.tintColor = UIColor(named: "ff_primary")
     }
         
         private func setupCollectionView() {
             sportCollectionView.dataSource = self
             sportCollectionView.delegate = self
+            sportCollectionView.backgroundColor = UIColor(named: "ff_background")
+            view.backgroundColor = UIColor(named: "ff_background")
             
             let layout = UICollectionViewFlowLayout()
             layout.minimumInteritemSpacing = 8

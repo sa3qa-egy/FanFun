@@ -22,6 +22,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
         self.networkMonitor = networkMonitor
     }
     
+    
     var numberOfUpcomingMatches: Int {
         return upcomingMatches.count
     }

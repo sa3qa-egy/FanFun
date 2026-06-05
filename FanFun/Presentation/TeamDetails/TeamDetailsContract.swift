@@ -33,7 +33,6 @@ protocol TeamDetailsPresenterProtocol {
 
 
 enum TeamDetailsRowViewModel {
-    // Football team roster
     case player(name: String, number: String?, position: String?, imageURL: String?)
 
     case stat(season: String, type: String, rank: String, titles: String,

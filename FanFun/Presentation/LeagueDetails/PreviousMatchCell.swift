@@ -22,12 +22,17 @@ class PreviousMatchCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = .clear
-        
+        containerView.backgroundColor = UIColor(named: "ff_surfuce")
         containerView.layer.shadowColor = UIColor.black.cgColor
         containerView.layer.shadowOpacity = 0.2
         containerView.layer.shadowOffset = CGSize(width: 0, height: 2)
         containerView.layer.shadowRadius = 4
         containerView.clipsToBounds = false
+        homeTeamNameLabel.textColor = UIColor(named: "ff_primary_text")
+        awayTeamNameLabel.textColor = UIColor(named: "ff_primary_text")
+        dateLabel.textColor = UIColor(named: "ff_primary_text")?.withAlphaComponent(0.6)
+        timeLabel.textColor = UIColor(named: "ff_primary_text")?.withAlphaComponent(0.6)
+        resultLabel.textColor = UIColor(named: "ff_primary")
     }
     
     override func layoutSubviews() {
