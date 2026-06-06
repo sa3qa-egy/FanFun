@@ -224,7 +224,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fav-table-789">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="ff_background"/>
                             </tableView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Favorites Yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fav-empty-lbl">
                                 <rect key="frame" x="134.66666666666666" y="415.66666666666669" width="123.66666666666666" height="21"/>
@@ -234,7 +234,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fav-safe-area"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="ff_background"/>
                         <constraints>
                             <constraint firstItem="fav-table-789" firstAttribute="leading" secondItem="fav-safe-area" secondAttribute="leading" id="fav-c1"/>
                             <constraint firstItem="fav-safe-area" firstAttribute="trailing" secondItem="fav-table-789" secondAttribute="trailing" id="fav-c2"/>
@@ -354,7 +354,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldU-jQ-l7G">
-                                                <rect key="frame" x="0.0" y="408" width="393" height="174"/>
+                                                <rect key="frame" x="0.0" y="248" width="393" height="174"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldL-kR-m8H">
                                                         <rect key="frame" x="16" y="0.0" width="361" height="24"/>
@@ -380,7 +380,7 @@
                                                         </connections>
                                                     </collectionView>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No teams available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldE-nU-p2K">
-                                                        <rect key="frame" x="135.66666666666666" y="96.666666666666629" width="121.66666666666666" height="17"/>
+                                                        <rect key="frame" x="135.66666666666666" y="96.666666666666686" width="121.66666666666666" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.66000000000000003" green="0.66000000000000003" blue="0.66000000000000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -399,7 +399,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldU-eL-g2B">
-                                                <rect key="frame" x="0.0" y="248" width="393" height="136"/>
+                                                <rect key="frame" x="0.0" y="446" width="393" height="136"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latest Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldL-fM-h3C">
                                                         <rect key="frame" x="16" y="0.0" width="361" height="24"/>
@@ -425,7 +425,7 @@
                                                         </connections>
                                                     </collectionView>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No previous matches" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldE-iP-k6F">
-                                                        <rect key="frame" x="128.33333333333331" y="77.666666666666686" width="136.33333333333331" height="17"/>
+                                                        <rect key="frame" x="128.33333333333331" y="77.666666666666629" width="136.33333333333331" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="UTg-gw-7dv"/>
                                                         </constraints>

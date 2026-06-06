@@ -22,6 +22,7 @@ class FavoritesViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         navigationController?.setNavigationBarHidden(false, animated: true)
         presenter.viewWillAppear()
     }
@@ -29,7 +30,7 @@ class FavoritesViewController: UIViewController {
     private func setupNavigationBar() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .systemBackground
+        appearance.backgroundColor = UIColor(named: "ff_background")
         appearance.titleTextAttributes = [.foregroundColor: UIColor.label]
 
         navigationController?.navigationBar.standardAppearance = appearance
