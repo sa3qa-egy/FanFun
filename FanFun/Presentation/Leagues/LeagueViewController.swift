@@ -39,6 +39,32 @@ class LeagueViewController: UIViewController {
         return label
     }()
 
+    private let emptyStateView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
+        return view
+    }()
+
+    private let emptyStateImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "magnifyingglass")
+        imageView.tintColor = UIColor(named: "ff_primary")
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+
+    private let emptyStateLabel: UILabel = {
+        let label = UILabel()
+        label.text = "No leagues found"
+        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        label.textColor = UIColor(named: "ff_primary_text") ?? .label
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Leagues"
@@ -50,6 +76,7 @@ class LeagueViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         tableView.reloadData()
+        emptyStateView.isHidden = presenter.numberOfLeagues > 0
     }
 
     private func setupUI() {
@@ -60,6 +87,7 @@ class LeagueViewController: UIViewController {
         setupTableView()
         setupActivityIndicator()
         setupOfflineBanner()
+        setupEmptyState()
     }
 
     
@@ -116,12 +144,36 @@ class LeagueViewController: UIViewController {
             offlineBannerLabel.centerYAnchor.constraint(equalTo: offlineBannerView.centerYAnchor)
         ])
     }
+
+    private func setupEmptyState() {
+        emptyStateView.addSubview(emptyStateImageView)
+        emptyStateView.addSubview(emptyStateLabel)
+        view.addSubview(emptyStateView)
+
+        NSLayoutConstraint.activate([
+            emptyStateView.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+            emptyStateView.centerYAnchor.constraint(equalTo: tableView.centerYAnchor),
+            
+            emptyStateImageView.centerXAnchor.constraint(equalTo: emptyStateView.centerXAnchor),
+            emptyStateImageView.topAnchor.constraint(equalTo: emptyStateView.topAnchor),
+            emptyStateImageView.widthAnchor.constraint(equalToConstant: 60),
+            emptyStateImageView.heightAnchor.constraint(equalToConstant: 60),
+            
+            emptyStateLabel.topAnchor.constraint(equalTo: emptyStateImageView.bottomAnchor, constant: 16),
+            emptyStateLabel.leadingAnchor.constraint(equalTo: emptyStateView.leadingAnchor),
+            emptyStateLabel.trailingAnchor.constraint(equalTo: emptyStateView.trailingAnchor),
+            emptyStateLabel.bottomAnchor.constraint(equalTo: emptyStateView.bottomAnchor)
+        ])
+    }
 }
 
 extension LeagueViewController: LeagueViewProtocol {
 
     func showLoading() {
-        DispatchQueue.main.async { self.activityIndicator.startAnimating() }
+        DispatchQueue.main.async { 
+            self.activityIndicator.startAnimating()
+            self.emptyStateView.isHidden = true
+        }
     }
 
     func hideLoading() {
@@ -129,7 +181,10 @@ extension LeagueViewController: LeagueViewProtocol {
     }
 
     func reloadTableView() {
-        DispatchQueue.main.async { self.tableView.reloadData() }
+        DispatchQueue.main.async { 
+            self.tableView.reloadData()
+            self.emptyStateView.isHidden = self.presenter.numberOfLeagues > 0
+        }
     }
 
     func showError(message: String) {
