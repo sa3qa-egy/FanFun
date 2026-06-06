@@ -33,7 +33,7 @@ final class LeagueDetailsPresenterTests: XCTestCase {
         mockRepository.stubbedUpcomingFixtures = upcoming
         mockRepository.stubbedPreviousFixtures = previous
         mockRepository.stubbedTeams = teams
-        sut.viewDidLoad(sportType: "football", leagueId: 1)
+        sut.viewDidLoad(sportType: "football", leagueId: 1, leagueName: "league1")
     }
 
     private func loadOfflineFavourite(upcoming: [Fixture] = [], previous: [Fixture] = [], teams: [Team] = []) {
@@ -42,11 +42,11 @@ final class LeagueDetailsPresenterTests: XCTestCase {
         mockRepository.stubbedCachedUpcoming = upcoming
         mockRepository.stubbedCachedPrevious = previous
         mockRepository.stubbedCachedTeams = teams
-        sut.viewDidLoad(sportType: "football", leagueId: 1)
+        sut.viewDidLoad(sportType: "football", leagueId: 1, leagueName: "league1")
     }
 
     func test_viewDidLoad_showsLoading() {
-        sut.viewDidLoad(sportType: "football", leagueId: 1)
+        sut.viewDidLoad(sportType: "football", leagueId: 1, leagueName: "league1")
 
         XCTAssertEqual(mockView.showLoadingCallCount, 1,
                        "viewDidLoad must show loading indicator immediately")
@@ -197,7 +197,7 @@ final class LeagueDetailsPresenterTests: XCTestCase {
         mockMonitor.stubbedIsConnected = true
         mockRepository.shouldReturnError = true
 
-        sut.viewDidLoad(sportType: "football", leagueId: 1)
+        sut.viewDidLoad(sportType: "football", leagueId: 1, leagueName: "league1")
 
         let expectation = self.expectation(description: "Error shown after all failures")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
