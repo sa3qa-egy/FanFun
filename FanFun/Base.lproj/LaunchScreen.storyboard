@@ -3,8 +3,8 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,7 +21,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="ff_background"/>
                         <constraints>
                             <constraint firstItem="hcY-9G-E2h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="229" id="374-31-Nbl"/>
                             <constraint firstItem="hcY-9G-E2h" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="GiT-2B-i8j"/>
@@ -37,8 +37,8 @@
     </scenes>
     <resources>
         <image name="AppLogo" width="228.5" height="416.5"/>
-        <systemColor name="systemBackgroundColor">
+        <namedColor name="ff_background">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        </namedColor>
     </resources>
 </document>
