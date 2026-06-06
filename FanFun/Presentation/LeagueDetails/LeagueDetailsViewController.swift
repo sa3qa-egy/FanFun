@@ -80,7 +80,7 @@ class LeagueDetailsViewController: UIViewController {
         setupCollectionViews()
         setupOfflineBanner()
         setupEmptyViews()
-        presenter.viewDidLoad(sportType: sportType, leagueId: leagueId)
+        presenter.viewDidLoad(sportType: sportType, leagueId: leagueId, leagueName: leagueName)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,6 +102,13 @@ class LeagueDetailsViewController: UIViewController {
         
         view.backgroundColor = UIColor(named: "ff_background")
         activityIndicator.color = UIColor(named: "ff_primary")
+        
+        let favoriteButton = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(favoriteButtonTapped))
+        navigationItem.rightBarButtonItem = favoriteButton
+    }
+    
+    @objc private func favoriteButtonTapped() {
+        presenter.toggleFavorite()
     }
     
     
@@ -274,6 +281,13 @@ extension LeagueDetailsViewController: LeagueDetailsViewProtocol {
             }, completion: { _ in
                 self.offlineBannerView.isHidden = true
             })
+        }
+    }
+    
+    func updateFavoriteIcon(isFavorite: Bool) {
+        DispatchQueue.main.async {
+            let iconName = isFavorite ? "star.fill" : "star"
+            self.navigationItem.rightBarButtonItem?.image = UIImage(systemName: iconName)
         }
     }
 }
