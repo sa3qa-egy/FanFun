@@ -37,6 +37,13 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.compactAppearance = appearance
         
         navigationController?.navigationBar.tintColor = UIColor(named: "ff_primary")
+        
+        let themeButton = UIBarButtonItem(image: UIImage(systemName: "moon.fill"), style: .plain, target: self, action: #selector(themeToggled))
+        navigationItem.rightBarButtonItem = themeButton
+    }
+
+    @objc private func themeToggled() {
+        presenter.toggleTheme()
     }
         
         private func setupCollectionView() {
@@ -58,6 +65,23 @@ class HomeViewController: UIViewController {
         func reloadCollectionView() {
             DispatchQueue.main.async {
                 self.sportCollectionView.reloadData()
+            }
+        }
+        
+        func applyTheme(isDark: Bool) {
+            DispatchQueue.main.async {
+                let style: UIUserInterfaceStyle = isDark ? .dark : .light
+                
+                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                    windowScene.windows.forEach { window in
+                        window.overrideUserInterfaceStyle = style
+                    }
+                } else {
+                    self.view.window?.overrideUserInterfaceStyle = style
+                }
+                
+                let iconName = isDark ? "sun.max.fill" : "moon.fill"
+                self.navigationItem.rightBarButtonItem?.image = UIImage(systemName: iconName)
             }
         }
     }

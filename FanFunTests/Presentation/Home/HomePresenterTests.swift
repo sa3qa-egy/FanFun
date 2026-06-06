@@ -6,12 +6,14 @@ final class HomePresenterTests: XCTestCase {
     var sut: HomePresenter!
     var mockView: MockHomeView!
     var mockRouter: MockAppRouter!
+    var mockRepository: MockSportsRepository!
 
     override func setUp() {
         super.setUp()
         mockView = MockHomeView()
         mockRouter = MockAppRouter()
-        sut = HomePresenter(router: mockRouter)
+        mockRepository = MockSportsRepository()
+        sut = HomePresenter(router: mockRouter, repository: mockRepository)
         sut.view = mockView
     }
 
@@ -19,6 +21,7 @@ final class HomePresenterTests: XCTestCase {
         sut = nil
         mockView = nil
         mockRouter = nil
+        mockRepository = nil
         super.tearDown()
     }
 
@@ -82,5 +85,22 @@ final class HomePresenterTests: XCTestCase {
 
         XCTAssertEqual(mockRouter.lastLeagueScreenSportType, "Tennis",
                        "Router must receive the selected sport's name")
+    }
+
+    func test_viewDidLoad_appliesThemeFromRepository() {
+        mockRepository.isDarkMode = true
+        sut.viewDidLoad()
+        
+        XCTAssertEqual(mockView.applyThemeCallCount, 1)
+        XCTAssertTrue(mockView.lastAppliedThemeIsDark == true)
+    }
+
+    func test_toggleTheme_togglesRepositoryIsDarkMode() {
+        mockRepository.isDarkMode = false
+        sut.toggleTheme()
+        
+        XCTAssertTrue(mockRepository.isDarkMode, "Repository's isDarkMode should be toggled to true")
+        XCTAssertEqual(mockView.applyThemeCallCount, 1)
+        XCTAssertTrue(mockView.lastAppliedThemeIsDark == true)
     }
 }

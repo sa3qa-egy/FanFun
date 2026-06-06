@@ -13,7 +13,14 @@ class MockFavoritesView: FavoritesViewProtocol {
 
 class MockHomeView: HomeViewProtocol {
     var reloadCollectionViewCallCount = 0
+    var applyThemeCallCount = 0
+    var lastAppliedThemeIsDark: Bool?
+    
     func reloadCollectionView() { reloadCollectionViewCallCount += 1 }
+    func applyTheme(isDark: Bool) {
+        applyThemeCallCount += 1
+        lastAppliedThemeIsDark = isDark
+    }
 }
 
 class MockLeagueView: LeagueViewProtocol {

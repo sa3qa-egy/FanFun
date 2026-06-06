@@ -9,6 +9,7 @@ import Foundation
 
 protocol HomeViewProtocol: AnyObject {
     func reloadCollectionView()
+    func applyTheme(isDark: Bool)
 }
 
 protocol HomePresenterProtocol {
@@ -16,4 +17,5 @@ protocol HomePresenterProtocol {
     func viewDidLoad()
     func getSport(at index: Int) -> Sport
     func didSelectSport(at index: Int)
+    func toggleTheme()
 }
