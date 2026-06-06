@@ -1,7 +1,14 @@
 import Network
 import Foundation
 
-class NetworkMonitor {
+// MARK: - Protocol
+/// Abstracts network connectivity checks so that tests can inject a mock.
+protocol NetworkMonitorProtocol {
+    var isConnected: Bool { get }
+}
+
+// MARK: - NetworkMonitor
+class NetworkMonitor: NetworkMonitorProtocol {
     
     static let shared = NetworkMonitor()
     
@@ -10,7 +17,7 @@ class NetworkMonitor {
     
     private(set) var isConnected: Bool = true
     
-    private init() {}
+    init() {}
     
     func startMonitoring() {
         monitor.pathUpdateHandler = { [weak self] path in

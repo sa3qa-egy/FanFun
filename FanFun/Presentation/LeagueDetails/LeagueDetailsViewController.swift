@@ -80,7 +80,7 @@ class LeagueDetailsViewController: UIViewController {
         setupCollectionViews()
         setupOfflineBanner()
         setupEmptyViews()
-        presenter.viewDidLoad(sportType: sportType, leagueId: leagueId)
+        presenter.viewDidLoad(sportType: sportType, leagueId: leagueId, leagueName: leagueName)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,6 +102,13 @@ class LeagueDetailsViewController: UIViewController {
         
         view.backgroundColor = UIColor(named: "ff_background")
         activityIndicator.color = UIColor(named: "ff_primary")
+        
+        let favoriteButton = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(favoriteButtonTapped))
+        navigationItem.rightBarButtonItem = favoriteButton
+    }
+    
+    @objc private func favoriteButtonTapped() {
+        presenter.toggleFavorite()
     }
     
     
@@ -276,6 +283,13 @@ extension LeagueDetailsViewController: LeagueDetailsViewProtocol {
             })
         }
     }
+    
+    func updateFavoriteIcon(isFavorite: Bool) {
+        DispatchQueue.main.async {
+            let iconName = isFavorite ? "star.fill" : "star"
+            self.navigationItem.rightBarButtonItem?.image = UIImage(systemName: iconName)
+        }
+    }
 }
 
 
@@ -337,6 +351,11 @@ extension LeagueDetailsViewController: UICollectionViewDataSource, UICollectionV
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard collectionView.tag == 2 else { return }
+
+        if !NetworkMonitor.shared.isConnected {
+            showError(message: "No internet connection. Cannot navigate to details.")
+            return
+        }
 
         let team = presenter.getTeam(at: indexPath.item)
 

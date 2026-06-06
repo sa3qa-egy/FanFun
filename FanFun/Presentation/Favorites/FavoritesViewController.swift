@@ -66,6 +66,13 @@ extension FavoritesViewController: FavoritesViewProtocol {
             self.tableView.isHidden = false
         }
     }
+
+    private func confirmRemoval(completion: @escaping () -> Void) {
+        let alert = UIAlertController(title: "Remove from Favorites", message: "Are you sure you want to remove this league from favorites?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Remove", style: .destructive) { _ in completion() })
+        present(alert, animated: true)
+    }
 }
 
 extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
@@ -107,7 +114,9 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
         cell.configureFavorite(isFavorite: true)
         
         cell.onFavoriteTapped = { [weak self] in
-            self?.presenter.removeFavorite(at: indexPath)
+            self?.confirmRemoval {
+                self?.presenter.removeFavorite(at: indexPath)
+            }
         }
         return cell
     }
@@ -119,7 +128,9 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            presenter.removeFavorite(at: indexPath)
+            confirmRemoval { [weak self] in
+                self?.presenter.removeFavorite(at: indexPath)
+            }
         }
     }
 }

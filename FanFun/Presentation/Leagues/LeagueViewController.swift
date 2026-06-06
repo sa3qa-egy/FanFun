@@ -183,7 +183,17 @@ extension LeagueViewController: UITableViewDataSource, UITableViewDelegate {
         cell.configure(with: league)
         cell.configureFavorite(isFavorite: presenter.isFavorite(at: indexPath.row))
         cell.onFavoriteTapped = { [weak self] in
-            self?.presenter.toggleFavorite(at: indexPath.row)
+            guard let self = self else { return }
+            if self.presenter.isFavorite(at: indexPath.row) {
+                let alert = UIAlertController(title: "Remove from Favorites", message: "Are you sure you want to remove this league from favorites?", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+                alert.addAction(UIAlertAction(title: "Remove", style: .destructive) { _ in
+                    self.presenter.toggleFavorite(at: indexPath.row)
+                })
+                self.present(alert, animated: true)
+            } else {
+                self.presenter.toggleFavorite(at: indexPath.row)
+            }
         }
         return cell
     }

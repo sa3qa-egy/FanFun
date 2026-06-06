@@ -6,7 +6,7 @@ class LeaguePresenter: LeaguePresenterProtocol {
     private let repository: SportsRepositoryProtocol
     private let router: AppRouterProtocol
     private var sportType: String = ""
-    private let networkMonitor: NetworkMonitor
+    private let networkMonitor: NetworkMonitorProtocol
 
     private var allLeagues: [League] = []
     private var filteredLeagues: [League] = []
@@ -14,7 +14,7 @@ class LeaguePresenter: LeaguePresenterProtocol {
     init(
         repository: SportsRepositoryProtocol = SportsRepositoryImpl(),
         router: AppRouterProtocol = AppRouter.shared,
-        networkMonitor: NetworkMonitor = NetworkMonitor.shared
+        networkMonitor: NetworkMonitorProtocol = NetworkMonitor.shared
     ) {
         self.repository = repository
         self.router = router
@@ -45,6 +45,12 @@ class LeaguePresenter: LeaguePresenterProtocol {
 
     func didSelectLeague(at index: Int) {
         let league = filteredLeagues[index]
+        
+        if !networkMonitor.isConnected {
+            view?.showError(message: "No internet connection. Cannot navigate to details.")
+            return
+        }
+        
         router.navigateToLeagueDetails(from: view as? UIViewController, sportType: sportType, leagueId: league.leagueKey, leagueName: league.leagueName)
     }
 
