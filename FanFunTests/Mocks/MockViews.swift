@@ -39,6 +39,9 @@ class MockLeagueView: LeagueViewProtocol {
 }
 
 class MockLeagueDetailsView: LeagueDetailsViewProtocol {
+
+    
+    
     var showLoadingCallCount = 0
     var hideLoadingCallCount = 0
     var reloadUpcomingMatchesCallCount = 0
@@ -47,7 +50,11 @@ class MockLeagueDetailsView: LeagueDetailsViewProtocol {
     var showOfflineBannerCallCount = 0
     var hideOfflineBannerCallCount = 0
     var lastErrorMessage: String?
-
+    var isFavorite: Bool = false
+    
+    func updateFavoriteIcon(isFavorite: Bool) {
+        self.isFavorite = !isFavorite
+    }
     func showLoading() { showLoadingCallCount += 1 }
     func hideLoading() { hideLoadingCallCount += 1 }
     func reloadUpcomingMatches() { reloadUpcomingMatchesCallCount += 1 }
