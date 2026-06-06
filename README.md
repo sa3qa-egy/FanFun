@@ -1,7 +1,6 @@
 <p align="center">
-  <img alt="FanFun Hero Image" src="[https://github.com/user-attachments/assets/f130a9a4-4779-4bdc-9eaf-99cde1e9dfed](https://github.com/user-attachments/assets/f130a9a4-4779-4bdc-9eaf-99cde1e9dfed)" width="100%" />
+  <img alt="FanFun Hero Image" src="https://github.com/user-attachments/assets/f130a9a4-4779-4bdc-9eaf-99cde1e9dfed" width="100%" />
 </p>
-
 <h1 align="center">FanFun 🏟️</h1>
 
 <p align="center">
@@ -9,9 +8,9 @@
 </p>
 
 <p align="center">
-  <img src="[https://img.shields.io/badge/iOS-13.0+-blue.svg](https://img.shields.io/badge/iOS-13.0+-blue.svg)" alt="iOS 13.0+">
-  <img src="[https://img.shields.io/badge/Swift-5.0+-orange.svg](https://img.shields.io/badge/Swift-5.0+-orange.svg)" alt="Swift 5.0+">
-  <img src="[https://img.shields.io/badge/Architecture-MVP%20%7C%20Clean-success.svg](https://img.shields.io/badge/Architecture-MVP%20%7C%20Clean-success.svg)" alt="MVP & Clean Architecture">
+  <img src="https://img.shields.io/badge/iOS-13.0%2B-blue.svg" alt="iOS 13.0+" />
+  <img src="https://img.shields.io/badge/Swift-5.0%2B-orange.svg" alt="Swift 5.0+" />
+  <img src="https://img.shields.io/badge/Architecture-MVP%20%7C%20Clean-success.svg" alt="MVP & Clean Architecture" />
 </p>
 
 ---
@@ -19,7 +18,7 @@
 FanFun is an iOS application designed for sports enthusiasts. It allows users to explore various sports (Football, Tennis, Cricket, Basketball), discover leagues, view upcoming and previous fixtures, check out team or player details, and save their favorite leagues for offline access.
 
 <p align="center">
-  <img alt="FanFun UI Showcase" src="[https://github.com/user-attachments/assets/dc6ba0d6-b21c-4c8d-b3f1-7ee5ba441713](https://github.com/user-attachments/assets/dc6ba0d6-b21c-4c8d-b3f1-7ee5ba441713)" width="100%" />
+  <img alt="FanFun UI Showcase" src="https://github.com/user-attachments/assets/dc6ba0d6-b21c-4c8d-b3f1-7ee5ba441713" width="100%" />
 </p>
 
 ## Features ✨
