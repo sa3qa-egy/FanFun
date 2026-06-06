@@ -6,15 +6,19 @@ protocol NetworkClientProtocol {
 }
 
 class NetworkClient: NetworkClientProtocol {
-    private let session: Session = {
-        let interceptor = APIKeyInterceptor()
-        
-        let configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForRequest  = 30
-        configuration.timeoutIntervalForResource = 30
-        
-        return Session(configuration: configuration, interceptor: interceptor)
-    }()
+    private let session: Session
+
+    init(session: Session? = nil) {
+        if let session = session {
+            self.session = session
+        } else {
+            let interceptor = APIKeyInterceptor()
+            let configuration = URLSessionConfiguration.default
+            configuration.timeoutIntervalForRequest  = 30
+            configuration.timeoutIntervalForResource = 30
+            self.session = Session(configuration: configuration, interceptor: interceptor)
+        }
+    }
     
     func request<T: Decodable>(url: String, parameters: [String: Any], completion: @escaping (Result<T, Error>) -> Void) {
         session.request(url, parameters: parameters).responseDecodable(of: T.self) { response in

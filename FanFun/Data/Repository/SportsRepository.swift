@@ -28,13 +28,13 @@ class SportsRepositoryImpl: SportsRepositoryProtocol {
     private let networkService: NetworkServiceProtocol
     private let localDataSource: LeagueLocalDataSource
     private let favoriteDataSource: FavoriteLocalDataSource
-    private let networkMonitor: NetworkMonitor
+    private let networkMonitor: NetworkMonitorProtocol
 
     init(
         networkService: NetworkServiceProtocol = NetworkService(),
         localDataSource: LeagueLocalDataSource = LeagueLocalDataSource(),
         favoriteDataSource: FavoriteLocalDataSource = FavoriteLocalDataSource(),
-        networkMonitor: NetworkMonitor = NetworkMonitor.shared
+        networkMonitor: NetworkMonitorProtocol = NetworkMonitor.shared as NetworkMonitorProtocol
     ) {
         self.networkService = networkService
         self.localDataSource = localDataSource
