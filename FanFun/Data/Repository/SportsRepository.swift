@@ -22,6 +22,7 @@ protocol SportsRepositoryProtocol {
     func getCachedUpcomingFixtures(leagueKey: Int, sportType: String) -> [Fixture]
     func getCachedPreviousFixtures(leagueKey: Int, sportType: String) -> [Fixture]
     func getCachedTeams(leagueKey: Int, sportType: String) -> [Team]
+    var isDarkMode: Bool { get set }
 }
 
 class SportsRepositoryImpl: SportsRepositoryProtocol {
@@ -29,17 +30,25 @@ class SportsRepositoryImpl: SportsRepositoryProtocol {
     private let localDataSource: LeagueLocalDataSource
     private let favoriteDataSource: FavoriteLocalDataSource
     private let networkMonitor: NetworkMonitorProtocol
+    private var preferencesDataSource: LocalPreferencesDataSourceProtocol
 
     init(
         networkService: NetworkServiceProtocol = NetworkService(),
         localDataSource: LeagueLocalDataSource = LeagueLocalDataSource(),
         favoriteDataSource: FavoriteLocalDataSource = FavoriteLocalDataSource(),
-        networkMonitor: NetworkMonitorProtocol = NetworkMonitor.shared as NetworkMonitorProtocol
+        networkMonitor: NetworkMonitorProtocol = NetworkMonitor.shared as NetworkMonitorProtocol,
+        preferencesDataSource: LocalPreferencesDataSourceProtocol = LocalPreferencesDataSource()
     ) {
         self.networkService = networkService
         self.localDataSource = localDataSource
         self.favoriteDataSource = favoriteDataSource
         self.networkMonitor = networkMonitor
+        self.preferencesDataSource = preferencesDataSource
+    }
+
+    var isDarkMode: Bool {
+        get { return preferencesDataSource.isDarkMode }
+        set { preferencesDataSource.isDarkMode = newValue }
     }
 
     private var dateFormatter: DateFormatter {

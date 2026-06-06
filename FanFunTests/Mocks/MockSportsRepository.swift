@@ -21,6 +21,7 @@ class MockSportsRepository: SportsRepositoryProtocol {
     var removeFavoriteCallCount = 0
     var lastRemovedLeagueKey: Int?
     var lastRemovedSportType: String?
+    var isDarkMode: Bool = false
 
     enum MockError: Error {
         case repositoryError

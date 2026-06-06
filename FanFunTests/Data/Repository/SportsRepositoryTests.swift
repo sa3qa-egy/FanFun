@@ -9,6 +9,7 @@ class SportsRepositoryTests: XCTestCase {
     var mockNetworkMonitor: MockNetworkMonitor!
     var localDataSource: LeagueLocalDataSource!
     var favoriteDataSource: FavoriteLocalDataSource!
+    var mockPreferencesDataSource: MockLocalPreferencesDataSource!
     var inMemoryContext: NSManagedObjectContext!
 
     override func setUp() {
@@ -18,12 +19,14 @@ class SportsRepositoryTests: XCTestCase {
         inMemoryContext = CoreDataTestHelper.makeInMemoryContext()
         localDataSource = LeagueLocalDataSource(context: inMemoryContext)
         favoriteDataSource = FavoriteLocalDataSource(context: inMemoryContext)
+        mockPreferencesDataSource = MockLocalPreferencesDataSource()
 
         sut = SportsRepositoryImpl(
             networkService: mockNetworkService,
             localDataSource: localDataSource,
             favoriteDataSource: favoriteDataSource,
-            networkMonitor: mockNetworkMonitor
+            networkMonitor: mockNetworkMonitor,
+            preferencesDataSource: mockPreferencesDataSource
         )
     }
 
@@ -200,5 +203,14 @@ class SportsRepositoryTests: XCTestCase {
         XCTAssertTrue(sut.isFavorite(leagueKey: 88, sportType: "football"))
         sut.removeFavorite(leagueKey: 88, sportType: "football")
         XCTAssertFalse(sut.isFavorite(leagueKey: 88, sportType: "football"))
+    }
+
+    func test_isDarkMode_getterAndSetter_delegatesToPreferencesDataSource() {
+        mockPreferencesDataSource.stubbedIsDarkMode = true
+        XCTAssertTrue(sut.isDarkMode)
+        
+        sut.isDarkMode = false
+        XCTAssertEqual(mockPreferencesDataSource.isDarkModeSetCallCount, 1)
+        XCTAssertFalse(mockPreferencesDataSource.stubbedIsDarkMode)
     }
 }
