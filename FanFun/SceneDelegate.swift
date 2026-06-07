@@ -18,6 +18,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = onboardingVC
             window?.makeKeyAndVisible()
         }
+
+        applyTheme(windowScene: windowScene)
+    }
+
+    private func applyTheme(windowScene: UIWindowScene) {
+        let isDark: Bool
+        if UserDefaults.standard.object(forKey: "isDarkMode") == nil {
+            isDark = UITraitCollection.current.userInterfaceStyle == .dark
+        } else {
+            isDark = UserDefaults.standard.bool(forKey: "isDarkMode")
+        }
+        
+        let style: UIUserInterfaceStyle = isDark ? .dark : .light
+        window?.overrideUserInterfaceStyle = style
+        windowScene.windows.forEach { $0.overrideUserInterfaceStyle = style }
     }
 
     private func switchToMainApp(windowScene: UIWindowScene) {
