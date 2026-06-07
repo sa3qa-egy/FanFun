@@ -1,10 +1,6 @@
 import Foundation
 import Alamofire
 
-protocol NetworkClientProtocol {
-    func request<T: Decodable>(url: String, parameters: [String: Any], completion: @escaping (Result<T, Error>) -> Void)
-}
-
 class NetworkClient: NetworkClientProtocol {
     private let session: Session
 

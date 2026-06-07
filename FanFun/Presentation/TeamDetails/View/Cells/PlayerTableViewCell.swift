@@ -175,7 +175,7 @@ class PlayerTableViewCell: UITableViewCell {
 
 
     private func setImage(urlString: String?) {
-        let placeholder = UIImage(named: "leauge_placeholder")
+        let placeholder = UIImage(named: "football")
         if let str = urlString, let url = URL(string: str) {
             playerImageView.sd_imageTransition = .fade(duration: 0.3)
             playerImageView.sd_setImage(with: url, placeholderImage: placeholder)

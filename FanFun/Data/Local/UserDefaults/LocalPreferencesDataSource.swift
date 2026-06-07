@@ -1,10 +1,6 @@
 import Foundation
 import UIKit
 
-protocol LocalPreferencesDataSourceProtocol {
-    var isDarkMode: Bool { get set }
-}
-
 class LocalPreferencesDataSource: LocalPreferencesDataSourceProtocol {
     private let defaults: UserDefaults
     private let key = "isDarkMode"

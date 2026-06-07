@@ -1,12 +1,6 @@
 import Network
 import Foundation
 
-// MARK: - Protocol
-/// Abstracts network connectivity checks so that tests can inject a mock.
-protocol NetworkMonitorProtocol {
-    var isConnected: Bool { get }
-}
-
 // MARK: - NetworkMonitor
 class NetworkMonitor: NetworkMonitorProtocol {
     

@@ -92,7 +92,6 @@ class LeagueViewController: UIViewController {
 
     
     private func setupSearchBar() {
-        // Match search bar background to screen background
         searchBar.barTintColor = UIColor(named: "ff_background")
         searchBar.backgroundColor = UIColor(named: "ff_background")
         searchBar.tintColor = UIColor(named: "ff_primary")
